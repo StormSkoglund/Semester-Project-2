@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./dist/css/index.css" />
+    <script
+      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <title>Auctio Home Page</title>
+  </head>
+  <body>
+    <header>
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center"
+      >
+        <img
+          src="/images/logo.png"
+          alt="The company Auctio name is written in white letters, with an auction hammer inside the o"
+          class="mt-2 mb-2 ml-auto"
+        />
+        <div>
+          <a href="#" class="mx-1 logbutton">Login</a>
+          <a href="#" class="mx-1 logbutton">Register</a>
+        </div>
+      </div>
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-primary w-75 m-auto rounded"
+      >
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navigation"
+            aria-controls="navigation"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active text-secondary fw-bolder p-large"
+                  aria-current="page"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary p-large" href="#">Buy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary p-large" href="#">Sell</a>
+              </li>
+              <li class="nav-item text-secondary">
+                <a class="nav-link text-secondary p-large" href="#">Profile</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="yellow-btn" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        <div></div>
+      </nav>
+    </header>
+    <main class="vh-100"><h1 class="text-center header1 m-5">Home</h1></main>
+    <footer>
+      <div class="container-fluid bg-primary text-white p-4 shadow-sm">
+        <div class="row">
+          <div class="col-md-4">
+            <h5 class="text-yellow header5">Address</h5>
+            <p class="p-large w-50">
+              Eventyrvej 123 Fjollestad, Postcode: 4567 Norway +47 12 21 1212
+              auction@auctio.no
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="text-yellow header5">How to:</h5>
+            <div class="my-border">
+              <p class="p-small w-50 mx-auto">
+                1. Register: Sign up and verify your email.
+              </p>
+              <p class="p-small w-50 mx-auto">
+                2. Get Credits: Receive 1000 credits for trading.
+              </p>
+              <p class="p-small w-50 mx-auto">
+                3. Trade: Browse and trade wares using credits.
+              </p>
+              <p class="p-small w-50 mx-auto">
+                4. Sell: List your wares for others to buy. Enjoy your trading
+                experience!
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-4 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="/images/logosmall.png"
+              alt="A logo of an auction hammer"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-info">
+        <div
+          class="text-center text-dark border-top p-3 row bg-info fw-bold p-large"
+        >
+          © 2024 AuctiO. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
