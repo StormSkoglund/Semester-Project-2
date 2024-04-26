@@ -19,11 +19,19 @@
         <img
           src="/images/logo.png"
           alt="The company Auctio name is written in white letters, with an auction hammer inside the o"
-          class="mt-2 mb-2 ml-auto"
+          class="mt-2 mb-2 ml-auto w-25"
         />
         <div>
           <a href="#" class="mx-1 logbutton">Login</a>
-          <a href="#" class="mx-1 logbutton">Register</a>
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="mx-1 blue-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#registerModal"
+          >
+            Register
+          </button>
         </div>
       </div>
       <nav
@@ -75,7 +83,106 @@
         <div></div>
       </nav>
     </header>
-    <main class="vh-100"><h1 class="text-center header1 m-5">Home</h1></main>
+    <main class="vh-100">
+      <h1 class="text-center header1 m-5">Home</h1>
+      <!-- Modal code from Getbootstrap.com [available from] https://getbootstrap.com/docs/5.3/components/modal/#how-it-works (Viewed on April 26-2024). -->
+      <!-- Registration Modal -->
+      <div
+        class="modal fade"
+        id="registerModal"
+        tabindex="-1"
+        aria-labelledby="registerModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-primary">
+              <h1
+                class="modal-title header1 text-center ms-5 me-5 text-light"
+                id="registerModalLabel"
+              >
+                Registration
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!--Registration Form-->
+              <form action="submit" method="post" id="regSubmit">
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input
+                    pattern="^[\w]+$"
+                    maxlength="20"
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    placeholder="example"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="User@stud.noroff.no"
+                    pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Create a password (must be at least 8 characters long)"
+                    pattern=".{8,}"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="confirm-password" class="form-label"
+                    >Password (Confirm)</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPassword"
+                    placeholder="Confirm password"
+                    pattern=".{8,}"
+                  />
+                  <div class="errorContainer p-small text-danger"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="avatar" class="form-label">Avatar</label>
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="avatar"
+                    placeholder="Enter an URL"
+                  />
+                </div>
+                <button type="submit" class="btn blue-btn">Register</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn yellow-btn"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer>
       <div class="container-fluid bg-primary text-white p-4 shadow-sm">
         <div class="row">

@@ -39,6 +39,8 @@ button.yellow-btn {
   font-size: 20;
   color: $dark;
   text-decoration: none;
+  background: none;
+  border: none;
 }
 
 button.blue-btn {
@@ -49,7 +51,7 @@ button.blue-btn {
   font-family: "Source Sans Pro", "Times New Roman", Times, serif;
   border: none;
   border-radius: 15%;
-  color: $blue;
+  color: $light;
 }
 
 .navbar-toggler-icon {
@@ -135,7 +137,13 @@ button.blue-btn:hover {
 .button {
   @include custom-font("Source Sans Pro", "bold", 20px, 1.2, 0%);
 }
+
+// border styles
 .my-border {
   border-top: 3px solid rgb(165, 165, 30);
   border-bottom: 3px solid rgb(165, 165, 30);
+}
+
+input:invalid {
+  border: 2px solid red;
 }
