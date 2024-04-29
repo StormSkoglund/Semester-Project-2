@@ -1,12 +1,15 @@
-import { baseURL, registerEndpoint } from "../constants";
+import { baseURL, registerEndpoint } from "../constants.js";
 
-export async function registerUser(username, email, password, avatar) {
+export async function registerUser(user) {
   const response = await fetch(baseURL + registerEndpoint, {
     method: "post",
-    body: JSON.stringify({ username, email, password, avatar }),
-    headers: headers("application/json"),
+    body: JSON.stringify(user),
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
   if (response.ok) {
+    console.log(response);
     return await response.json();
   }
 

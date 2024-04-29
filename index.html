@@ -5,8 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./dist/css/index.css" />
+    <link
+      rel="icon"
+      href="/images/Logoicon.ico"
+      type="image/x-icon"
+      alt="A golden hammer inside an oval white circle"
+    />
+
     <script
       src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+
+    <script
+      type="module"
+      src="/src/js/api/listeners/register.js"
       defer
     ></script>
     <title>Auctio Home Page</title>
@@ -112,7 +125,7 @@
             </div>
             <div class="modal-body">
               <!--Registration Form-->
-              <form action="submit" method="post" id="regSubmit">
+              <form id="regSubmit">
                 <div class="mb-3">
                   <label for="username" class="form-label">Username</label>
                   <input
@@ -171,6 +184,8 @@
               </form>
             </div>
             <div class="modal-footer">
+              <div class="tryCatchContainer p-small text-danger"></div>
+              <div class="successContainer p-small text-info"></div>
               <button
                 type="button"
                 class="btn yellow-btn"
