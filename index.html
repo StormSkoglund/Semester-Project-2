@@ -22,6 +22,7 @@
       src="/src/js/api/listeners/register.js"
       defer
     ></script>
+    <script type="module" src="/src/js/api/index.js"></script>
     <title>Auctio Home Page</title>
   </head>
   <body>
@@ -96,7 +97,7 @@
         <div></div>
       </nav>
     </header>
-    <main class="vh-100">
+    <main>
       <h1 class="text-center header1 m-5">Home</h1>
       <!-- Modal code from Getbootstrap.com [available from] https://getbootstrap.com/docs/5.3/components/modal/#how-it-works (Viewed on April 26-2024). -->
       <!-- Registration Modal -->
@@ -109,9 +110,9 @@
       >
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-header bg-primary">
+            <div class="modal-header bg-primary position-relative">
               <h1
-                class="modal-title header1 text-center ms-5 me-5 text-light"
+                class="modal-title header1 text-center ms-5 me-5 text-light position absolute"
                 id="registerModalLabel"
               >
                 Registration
@@ -196,6 +197,14 @@
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <h2 class="header2 m-auto mb-4 text-center col-3 my-border-dark">
+          Listings
+        </h2>
+        <div
+          class="listingsContainer vh-25 d-flex row my-border-blue card m-auto mt-1 mb-1"
+        ></div>
       </div>
     </main>
     <footer>

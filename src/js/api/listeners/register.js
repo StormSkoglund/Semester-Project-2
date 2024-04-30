@@ -39,7 +39,7 @@ async function requestReg() {
       alt: "The user avatar",
     },
     banner: {
-      url: "https://fastly.picsum.photos/id/26",
+      url: "https://picsum.photos/id/26/800/500",
       alt: "A collection of expensive items",
     },
     venueManager: true,
