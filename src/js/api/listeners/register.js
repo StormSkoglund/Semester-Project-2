@@ -38,6 +38,7 @@ async function requestReg() {
       url: `${avatarValue}`,
       alt: "The user avatar",
     },
+    bio: "",
     banner: {
       url: "https://picsum.photos/id/26/800/500",
       alt: "A collection of expensive items",
@@ -48,12 +49,7 @@ async function requestReg() {
 
   try {
     const response = await userReg.registerUser(user);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    } else {
-      regInput.successContainer.innerHTML = "User registration successful";
-    }
+    regInput.successContainer.innerHTML = "User registration successful";
   } catch (error) {
     regInput.showTryCatchError.innerHTML = "Registration failed: " + error;
   }

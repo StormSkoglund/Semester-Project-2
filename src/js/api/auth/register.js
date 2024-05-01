@@ -8,10 +8,8 @@ export async function registerUser(user) {
       "Content-Type": "application/json",
     },
   });
-  if (response.ok) {
-    console.log(response);
-    return await response.json();
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
-
-  throw new Error(response.statusText);
+  return await response.json();
 }
