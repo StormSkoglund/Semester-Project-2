@@ -159,7 +159,7 @@ button.blue-btn:hover {
   border-bottom: 2px solid $dark;
 }
 
-input:invalid {
+input:required:invalid:not(:placeholder-shown) {
   border: 2px solid red;
 }
 
