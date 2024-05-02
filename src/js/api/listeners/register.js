@@ -4,11 +4,12 @@ import * as regInput from "../constants.js";
 // Form Validation (Compare passwords)
 document
   .getElementById("regSubmit")
-  .addEventListener("click", function (event) {
+  .addEventListener("input", function (event) {
     const passwordInput = regInput.password.value;
     const confirmInput = regInput.confirmPassword.value;
 
     if (passwordInput !== confirmInput) {
+      regInput.showError.innerHTML = "";
       regInput.showError.innerHTML = "Passwords doesn't match";
       event.preventDefault();
     } else {
@@ -48,8 +49,9 @@ async function requestReg() {
   console.log(user);
 
   try {
-    const response = await userReg.registerUser(user);
-    regInput.successContainer.innerHTML = "User registration successful";
+    const regData = await userReg.registerUser(user);
+    regInput.successContainer.innerHTML = `User registration successful. Welcome, ${regData.data.name}!`;
+    console.log(regData);
   } catch (error) {
     regInput.showTryCatchError.innerHTML = "Registration failed: " + error;
   }

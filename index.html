@@ -136,6 +136,7 @@
                     class="form-control"
                     id="username"
                     placeholder="example"
+                    required
                   />
                 </div>
                 <div class="mb-3">
@@ -146,6 +147,7 @@
                     id="email"
                     placeholder="User@stud.noroff.no"
                     pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                    required
                   />
                 </div>
 
@@ -157,6 +159,7 @@
                     id="password"
                     placeholder="Create a password (must be at least 8 characters long)"
                     pattern=".{8,}"
+                    required
                   />
                 </div>
                 <div class="mb-3">
@@ -169,6 +172,7 @@
                     id="confirmPassword"
                     placeholder="Confirm password"
                     pattern=".{8,}"
+                    required
                   />
                   <div class="errorContainer p-small text-danger"></div>
                 </div>
@@ -198,14 +202,15 @@
           </div>
         </div>
       </div>
+
       <div>
         <h2
-          class="header2 m-auto mb-4 text-center col-3 my-border-dark listings"
+          class="header2 m-auto mb-4 text-center col-12 col-sm-6 col-sm-3 my-border-dark listings"
         >
           Listings
         </h2>
         <div
-          class="listingsContainer listings d-flex row my-border-dark m-auto mt-1 mb-1 w-50"
+          class="listingsContainer listings d-flex row my-border-dark m-auto mt-1 mb-1 col-12 col-sm-6"
         ></div>
       </div>
     </main>

@@ -12,5 +12,8 @@ export async function registerUser(user) {
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
   }
-  return await response.json();
+
+  const json = await response.json();
+
+  return await json;
 }
