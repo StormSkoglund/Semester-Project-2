@@ -8,12 +8,11 @@ export async function registerUser(user) {
       "Content-Type": "application/json",
     },
   });
+  const json = await response.json();
   console.log(response);
   if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    throw new Error(json.errors?.[0]?.message || "Registration failed");
   }
-
-  const json = await response.json();
 
   return await json;
 }

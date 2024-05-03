@@ -19,7 +19,7 @@
 
     <script
       type="module"
-      src="/src/js/api/listeners/register.js"
+      src="./src/js/api/listeners/auth/register.js"
       defer
     ></script>
     <script type="module" src="/src/js/api/index.js"></script>
@@ -186,9 +186,11 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="avatarAlt" class="form-label">Avatar-alt</label>
+                  <label for="avatarAlt" class="form-label"
+                    >Avatar Description</label
+                  >
                   <input
-                    type="url"
+                    type="text"
                     class="form-control"
                     id="avatarAlt"
                     placeholder="Enter a description of your avatar"
@@ -200,13 +202,16 @@
             <div class="modal-footer">
               <div class="tryCatchContainer p-small text-danger"></div>
               <div class="successContainer p-small text-warning"></div>
-              <button
-                type="button"
-                class="btn yellow-btn"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
+              <div id="loginBtn"></div>
+              <div id="close">
+                <button
+                  type="button"
+                  class="btn yellow-btn"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,5 @@
-import * as userReg from "../../api/auth/register.js";
-import * as regInput from "../constants.js";
+import * as userReg from "../../auth/register.js";
+import * as regInput from "../../constants.js";
 
 // Form Validation (Compare passwords)
 document
@@ -51,6 +51,13 @@ async function requestReg() {
   try {
     const regData = await userReg.registerUser(user);
     regInput.successContainer.innerHTML = `User registration successful. Welcome, ${regData.data.name}!`;
+    document.getElementById("loginBtn").innerHTML = `<button
+    type="button"
+    class="mx-1 blue-btn"
+    data-bs-toggle="modal"
+    data-bs-target="#loginModal"
+  >Login</button>`;
+    document.getElementById("close").innerHTML = "";
     console.log(regData);
   } catch (error) {
     regInput.showTryCatchError.innerHTML = "Registration failed: " + error;
