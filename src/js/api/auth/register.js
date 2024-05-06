@@ -1,6 +1,6 @@
 import { baseURL, registerEndpoint } from "../constants.js";
 
-export async function registerUser(user) {
+export async function register(user) {
   const response = await fetch(baseURL + registerEndpoint, {
     method: "post",
     body: JSON.stringify(user),

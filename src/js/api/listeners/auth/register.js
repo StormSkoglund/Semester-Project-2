@@ -49,8 +49,16 @@ async function requestReg() {
   console.log(user);
 
   try {
-    const regData = await userReg.registerUser(user);
+    const regData = await userReg.register(user);
     regInput.successContainer.innerHTML = `User registration successful. Welcome, ${regData.data.name}!`;
+    localStorage.setItem(
+      "userProfile",
+      JSON.stringify({
+        username: regData.data.name,
+        email: regData.data.email,
+      })
+    );
+
     document.getElementById("loginBtn").innerHTML = `<button
     type="button"
     class="mx-1 blue-btn"

@@ -20,9 +20,9 @@
     <script
       type="module"
       src="./src/js/api/listeners/auth/register.js"
-      defer
     ></script>
     <script type="module" src="/src/js/api/index.js"></script>
+    <script type="module" src="/src/js/api/listeners/auth/login.js"></script>
     <title>Auctio Home Page</title>
   </head>
   <body>
@@ -36,7 +36,14 @@
           class="mt-2 mb-2 ml-auto w-25"
         />
         <div>
-          <a href="#" class="mx-1 logbutton">Login</a>
+          <button
+            type="button"
+            class="mx-1 logbutton"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >
+            Login
+          </button>
           <!-- Button trigger modal -->
           <button
             type="button"
@@ -112,7 +119,7 @@
           <div class="modal-content">
             <div class="modal-header bg-primary position-relative">
               <h1
-                class="modal-title header1 text-center ms-5 me-5 text-light position absolute"
+                class="modal-title header1modal text-light"
                 id="registerModalLabel"
               >
                 Registration
@@ -212,6 +219,76 @@
                   Close
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bootstrap Modal for Login Form -->
+      <div
+        class="modal fade"
+        id="loginModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="loginModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-primary">
+              <h5
+                class="modal-title header1modal text-center text-light"
+                id="loginModalLabel"
+              >
+                Log-In
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="loginForm">
+                <div class="form-group">
+                  <label for="emailInput">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="emailInput"
+                    placeholder="Enter your email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="passwordInput">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="passwordInput"
+                    placeholder="Password"
+                  />
+                </div>
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    class="form-check-input"
+                    id="rememberCheck"
+                  />
+                  <label class="form-check-label" for="rememberCheck"
+                    >Remember me</label
+                  >
+                </div>
+                <a href="#" class="d-block mt-3">Forgot password?</a>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div class="p-large text-danger" id="displayError"></div>
+              <div class="p-large text-warning" id="displaySuccess"></div>
+              <button type="button" class="btn yellow-btn" data-dismiss="modal">
+                Close
+              </button>
             </div>
           </div>
         </div>

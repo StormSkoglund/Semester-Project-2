@@ -105,6 +105,10 @@ button.blue-btn:hover {
   @include custom-font("Kaushan Script", "regular", 64px, 1.2, 0%);
 }
 
+.header1modal {
+  @include custom-font("Kaushan Script", "regular", 32px, 1.2, 0%);
+}
+
 // Header 2 styles
 .header2 {
   @include custom-font("Source Sans Pro", "bold", 40px, 1.2, 0%);
