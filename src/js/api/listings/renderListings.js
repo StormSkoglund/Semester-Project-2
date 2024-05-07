@@ -1,4 +1,4 @@
-import { renderCountdown } from "../../renderCountdown.js";
+import { renderCountdown } from "../../tools/renderCountdown.js";
 import { displayListings } from "../constants.js";
 import { fetchListings } from "./fetchListings.js";
 
