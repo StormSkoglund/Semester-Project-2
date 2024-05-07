@@ -1,10 +1,10 @@
-import { login } from "../../auth/login.js";
+import { login } from "../../../api/auth/login.js";
 import {
   baseURL,
   emailLogin,
   loginEndpoint,
   passwordLogin,
-} from "../../constants.js";
+} from "../../../api/constants.js";
 
 document.getElementById("loginForm").addEventListener("submit", requestLogin);
 document

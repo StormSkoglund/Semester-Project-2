@@ -1,6 +1,6 @@
-import { renderCountdown } from "../../tools.js";
+import { renderCountdown } from "../../renderCountdown.js";
 import { displayListings } from "../constants.js";
-import { fetchListings } from "./listings.js";
+import { fetchListings } from "./fetchListings.js";
 
 export async function renderListings(auctionEnd, renderContainer) {
   const listings = await fetchListings();

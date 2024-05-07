@@ -19,5 +19,4 @@ export const showTryCatchError = document.querySelector(".tryCatchContainer");
 export const successContainer = document.querySelector(".successContainer");
 export const displayListings = document.querySelector(".listingsContainer");
 
-// Key
 export const apiKey = "3adf45c0-1ffd-48f3-9235-e2a640950e28";

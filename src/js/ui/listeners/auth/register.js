@@ -1,5 +1,5 @@
-import * as userReg from "../../auth/register.js";
-import * as regInput from "../../constants.js";
+import * as userReg from "../../../api/auth/register.js";
+import * as regInput from "../../../api/constants.js";
 
 // Form Validation (Compare passwords)
 document

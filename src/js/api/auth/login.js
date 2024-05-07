@@ -1,15 +1,12 @@
-import { apiKey, baseURL, loginEndpoint } from "../constants.js";
+import { authFetch } from "../autFetch.js";
+import { baseURL, loginEndpoint } from "../constants.js";
 
 export async function login(url, data) {
   const loginData = {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "X-Noroff-API-Key": apiKey,
-    },
     body: JSON.stringify(data),
   };
-  const response = await fetch(baseURL + loginEndpoint, loginData);
+  const response = await authFetch(baseURL + loginEndpoint, loginData);
 
   const json = await response.json();
   console.log(response);

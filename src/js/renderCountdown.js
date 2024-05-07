@@ -1,4 +1,4 @@
-// Countdown from a given date. Code originate from W3Schools. (No Date). How To Create a Countdown Timer - W3Schools. https://www.w3schools.com/howto/howto_js_countdown.asp Available at: W3Schools (Accessed: 30 April 2024)
+// Countdown from a given date. Code originates from a tutorial on W3Schools. (No Date). How To Create a Countdown Timer - W3Schools. https://www.w3schools.com/howto/howto_js_countdown.asp Available at: W3Schools (Accessed: 30 April 2024)
 
 export function renderCountdown(auctionEnd, renderContainer) {
   let countDownDate = new Date(auctionEnd).getTime();
@@ -13,7 +13,7 @@ export function renderCountdown(auctionEnd, renderContainer) {
     );
     let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
+    // Checks if the countdown has passed zero, if it has, a text is shown to notify the user that the auction has ended, else it displays the countdown. This part of the code differs from the W3schools tutorial.
     if (distance >= 0) {
       renderContainer.innerHTML = "";
       renderContainer.innerHTML += `<div class="d-flex justify-content-end my-border-bottom"><p class="p-large">Ends at: ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds</p></div>`;
