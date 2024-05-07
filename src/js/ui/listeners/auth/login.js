@@ -5,6 +5,7 @@ import {
   loginEndpoint,
   passwordLogin,
 } from "../../../api/constants.js";
+import { save } from "../../../storage/save.js";
 
 document.getElementById("loginForm").addEventListener("submit", requestLogin);
 document
@@ -35,34 +36,13 @@ async function requestLogin(event) {
         "displaySuccess"
       ).innerHTML = `User registration successful. Welcome, ${loginUser.data.name}!`;
     }
-    // set accesToken
+    // set accesToken og loginstatus
     const accessToken = loginUser.data.accessToken;
-    localStorage.setItem("accessToken", accessToken);
+    save("accessToken", accessToken);
+    save("loginStatus", true);
   } catch (error) {
     document.getElementById(
       "displayError"
     ).innerHTML = `Registration failed: ${error}`;
   }
 }
-
-/*(response.ok) {
-        `User registration successful. Welcome, ${regData.data.name}!`;
-      } else {
-        throw new Error("User does not exist.");
-      }
-      const json = await response.json();
-      const accessToken = json.accessToken;
-      localStorage.setItem("accessToken", accessToken);
-      localStorage.setItem(
-        "userProfile",
-        JSON.stringify({
-          userInputname: json.name,
-          userMail: json.email,
-        })
-      );
-  
-      return json;
-    } catch (error) {
-      tryCatchError(error.message);
-    }
-  } */

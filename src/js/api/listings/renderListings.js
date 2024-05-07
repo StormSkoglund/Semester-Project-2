@@ -1,3 +1,4 @@
+import { load } from "../../storage/load.js";
 import { renderCountdown } from "../../tools/renderCountdown.js";
 import { displayListings } from "../constants.js";
 import { fetchListings } from "./fetchListings.js";
@@ -17,23 +18,40 @@ export async function renderListings(auctionEnd, renderContainer) {
 
       const renderContainer = displayListings;
       const auctionEnd = `${listing.endsAt}`;
+
+      let loginStatus = load("loginStatus");
+
+      let login = loginStatus === true;
       let listingContainer = document.createElement("div");
 
-      listingContainer.innerHTML += `
+      if (login === true) {
+        let htmlContent = `
       <div class="header3 col-5 text-truncate mt-3 mb-3">${listing.title}</div>
-      <img class="mx-2 mb-5 align-self-start h-auto listing-img" src=${mediaContent} alt="${altText}" /> 
+      <img class="mx-2 mb-5 align-self-start h-auto listing-img" src="${mediaContent}" alt="${altText}" /> 
+      <div class="d-flex justify-content-end "><p class="p-large">Number of bids: ${listing._count.bids}</p></div>
+      <div class="d-flex justify-content-end"><button class="btn blue-btn text-center bid-btn" >Bid Now</button></div>
+      <div class="d-flex justify-content-end"><p class="p-small col-5 m-auto mb-3 pt-3 text-center">Login or register to place a bid.</p></div>
+`;
+        listingContainer.innerHTML = "";
+
+        listingContainer.insertAdjacentHTML("beforeend", htmlContent);
+      } else {
+        let htmlContent = `
+      <div class="header3 col-5 text-truncate mt-3 mb-3">${listing.title}</div>
+      <img class="mx-2 mb-5 align-self-start h-auto listing-img" src="${mediaContent}" alt="${altText}" /> 
       <div class="d-flex justify-content-end "><p class="p-large">Number of bids: ${listing._count.bids}</p></div>
       <div class="d-flex justify-content-end"><button class="btn blue-btn opacity-50 text-center">Bid Now</button></div>
       <div class="d-flex justify-content-end"><p class="p-small col-5 m-auto mb-3 pt-3 text-center">Login or register to place a bid.</p></div>
-      
-    `;
+`;
+
+        listingContainer.insertAdjacentHTML("beforeend", htmlContent);
+      }
+
       let countdownContainer = document.createElement("div");
       listingContainer.appendChild(countdownContainer);
 
-      // Start the countdown for this listing
+      // Start countdown
       renderCountdown(auctionEnd, countdownContainer);
-
-      // Append the listing container to the main display
       displayListings.appendChild(listingContainer);
     });
   } catch (error) {

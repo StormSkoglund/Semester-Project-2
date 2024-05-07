@@ -15,13 +15,16 @@ export function renderCountdown(auctionEnd, renderContainer) {
     let seconds = Math.floor((distance % (1000 * 60)) / 1000);
     // Checks if the countdown has passed zero, if it has, a text is shown to notify the user that the auction has ended, else it displays the countdown. This part of the code differs from the W3schools tutorial.
     if (distance >= 0) {
+      let htmlContent = `<div class="d-flex justify-content-end my-border-bottom"><p class="p-large">Ends at: ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds</p></div>`;
       renderContainer.innerHTML = "";
-      renderContainer.innerHTML += `<div class="d-flex justify-content-end my-border-bottom"><p class="p-large">Ends at: ${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds</p></div>`;
+      renderContainer.insertAdjacentHTML("beforeend", htmlContent);
     }
 
     if (distance < 0) {
       clearInterval(clearCountdown);
-      renderContainer.innerHTML = `<div class="d-flex justify-content-end my-border-bottom"><p class="p-large">Auction has ended</p></div>`;
+      let htmlContent = `<div class="d-flex justify-content-end my-border-bottom"><p class="p-large">Auction has ended</p></div>`;
+      renderContainer.innerHTML = "";
+      renderContainer.insertAdjacentHTML("beforeend", htmlContent);
     }
   }, 1000);
 }

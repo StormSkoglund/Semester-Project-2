@@ -1,5 +1,6 @@
 import * as userReg from "../../../api/auth/register.js";
 import * as regInput from "../../../api/constants.js";
+import { save } from "../../../storage/save.js";
 
 // Form Validation (Compare passwords)
 document
@@ -51,13 +52,10 @@ async function requestReg() {
   try {
     const regData = await userReg.register(user);
     regInput.successContainer.innerHTML = `User registration successful. Welcome, ${regData.data.name}!`;
-    localStorage.setItem(
-      "userProfile",
-      JSON.stringify({
-        username: regData.data.name,
-        email: regData.data.email,
-      })
-    );
+    save("userProfile", {
+      username: regData.data.name,
+      email: regData.data.email,
+    });
 
     document.getElementById("loginBtn").innerHTML = `<button
     type="button"
