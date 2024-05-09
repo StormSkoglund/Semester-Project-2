@@ -1,7 +1,8 @@
 // URL
 export const baseURL = "https://v2.api.noroff.dev/";
 export const registerEndpoint = "auth/register";
-export const listingsEndpoint = "auction/listings";
+export const listingsEndpoint = "auction/listings?_seller=true&_bids=true";
+export const listingsEndpointFiltered = "auction/listings?_tag=&_active=true";
 export const loginEndpoint = "auth/login";
 export const keyEndpoint = "auth/create-api-key";
 // Inputs

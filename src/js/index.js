@@ -1,5 +1,6 @@
-import { fetchListings } from "./api/listings/fetchListings.js";
+import { carouselListings } from "./api/listings/carouselListings.js";
+
 import { renderListings } from "./api/listings/renderListings.js";
 
-fetchListings();
+carouselListings();
 renderListings();

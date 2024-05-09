@@ -1,13 +1,13 @@
 import { load } from "../../storage/load.js";
 import { renderCountdown } from "../../tools/renderCountdown.js";
-import { displayListings } from "../constants.js";
+import { baseURL, displayListings, listingsEndpoint } from "../constants.js";
 import { fetchListings } from "./fetchListings.js";
 
-export async function renderListings(auctionEnd, renderContainer) {
-  const listings = await fetchListings();
-  console.log(listings);
-
+export async function renderListings() {
   try {
+    const listings = await fetchListings(baseURL + listingsEndpoint);
+    console.log(listings);
+
     listings.data.forEach((listing) => {
       let mediaContent = listing.media[0]
         ? listing.media[0].url
@@ -16,8 +16,7 @@ export async function renderListings(auctionEnd, renderContainer) {
         ? listing.media[0].alt
         : "A selection of expensive items";
 
-      const renderContainer = displayListings;
-      const auctionEnd = `${listing.endsAt}`;
+      let listingAuctionEnd = `${listing.endsAt}`;
 
       let loginStatus = load("loginStatus");
 
@@ -29,6 +28,7 @@ export async function renderListings(auctionEnd, renderContainer) {
       <div class="header3 col-5 text-truncate mt-3 mb-3">${listing.title}</div>
       <img class="mx-2 mb-5 align-self-start h-auto listing-img" src="${mediaContent}" alt="${altText}" /> 
       <div class="d-flex justify-content-end "><p class="p-large">Number of bids: ${listing._count.bids}</p></div>
+      <div class="d-flex justify-content-end "><p class="p-large me-2">Seller: </p><p class="p-large text-warning">${listing.seller.name}</p></div>
       <div class="d-flex justify-content-end"><button class="btn blue-btn text-center bid-btn" >Bid Now</button></div>
       <div class="d-flex justify-content-end"><p class="p-small col-5 m-auto mb-3 pt-3 text-center">Login or register to place a bid.</p></div>
 `;
@@ -40,6 +40,7 @@ export async function renderListings(auctionEnd, renderContainer) {
       <div class="header3 col-5 text-truncate mt-3 mb-3">${listing.title}</div>
       <img class="mx-2 mb-5 align-self-start h-auto listing-img" src="${mediaContent}" alt="${altText}" /> 
       <div class="d-flex justify-content-end "><p class="p-large">Number of bids: ${listing._count.bids}</p></div>
+      <div class="d-flex justify-content-end "><p class="p-large me-2">Seller: </p><p class="p-large text-warning">${listing.seller.name}</p></div>
       <div class="d-flex justify-content-end"><button class="btn blue-btn opacity-50 text-center">Bid Now</button></div>
       <div class="d-flex justify-content-end"><p class="p-small col-5 m-auto mb-3 pt-3 text-center">Login or register to place a bid.</p></div>
 `;
@@ -51,10 +52,13 @@ export async function renderListings(auctionEnd, renderContainer) {
       listingContainer.appendChild(countdownContainer);
 
       // Start countdown
-      renderCountdown(auctionEnd, countdownContainer);
+      renderCountdown(listingAuctionEnd, countdownContainer);
       displayListings.appendChild(listingContainer);
     });
   } catch (error) {
-    displayListings.innerHTML += `${error}`;
+    console.error("Error in renderListings: ", error);
+    if (displayListings) {
+      displayListings.innerHTML += `Error: ${error.message}`;
+    }
   }
 }
