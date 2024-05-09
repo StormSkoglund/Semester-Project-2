@@ -34,10 +34,10 @@ button.yellow-btn {
 }
 
 .logbutton {
-  font-family: "Source Sans Pro", "Times New Roman", Times, serif;
+  padding: 0.6rem;
+  text-align: center;
   font-weight: bold;
-  font-size: 20;
-  color: $dark;
+  font-family: "Source Sans Pro", "Times New Roman", Times, serif;
   text-decoration: none;
   background: none;
   border: none;
@@ -167,6 +167,10 @@ input:required:invalid:not(:placeholder-shown) {
   border: 2px solid red;
 }
 
+.my-border-thin {
+  border: 0.8px solid $dark;
+}
+
 // My containers
 
 .listings {
@@ -209,4 +213,10 @@ input:required:invalid:not(:placeholder-shown) {
   border: solid 2px $blue;
   box-shadow: 0px 3px 65px $blue;
   filter: sepia(35%);
+}
+
+// listings-container
+
+.container-75 {
+  max-height: 75vh;
 }

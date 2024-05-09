@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Profile page belonging to an Auctio user. Auctio is an online auction house, with hundreds of new exciting items everyday"
+    />
+    <meta name="keywords" content="Auction, live, bidding" />
+    <meta name="author" content="Alex Storm Skoglund" />
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <link
+      rel="icon"
+      href="/images/Logoicon.ico"
+      type="image/x-icon"
+      alt="A golden hammer inside an oval white circle"
+    />
+
+    <script
+      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+
+    <title>Auctio | Profile</title>
+  </head>
+  <body>
+    <header class="bg-light pb-2 my-border-bottom">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center"
+      >
+        <img
+          src="/images/logo.png"
+          alt="The company Auctio name is written in white letters, with an auction hammer inside the o"
+          class="mt-2 mb-2 ml-auto w-25"
+        />
+        <div>
+          <button type="button" class="btn logbutton">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-box-arrow-left"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"
+              ></path>
+            </svg>
+            Log Out
+          </button>
+          <!-- Button trigger modal -->
+        </div>
+      </div>
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-primary w-75 m-auto rounded"
+      >
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navigation"
+            aria-controls="navigation"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navigation">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link text-secondary p-large" href="../index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary p-large" href="#">Buy</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-secondary p-large" href="#">Sell</a>
+              </li>
+              <li class="nav-item text-secondary">
+                <a
+                  class="nav-link active text-secondary fw-bolder p-large"
+                  aria-current="page"
+                  href="#"
+                  >Profile</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="yellow-btn" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+        <div></div>
+      </nav>
+    </header>
+    <main>
+      <h1 class="text-center header1 m-5">Profile</h1>
+    </main>
+    <footer>
+      <div class="container-fluid bg-primary text-white p-4 shadow-sm">
+        <div class="row">
+          <div class="col-md-4">
+            <h5 class="text-yellow header5">Address</h5>
+            <p class="p-large w-50">
+              Eventyrvej 123 Fjollestad, Postcode: 4567 Norway +47 12 21 1212
+              auction@auctio.no
+            </p>
+          </div>
+          <div class="col-md-4">
+            <h5 class="text-yellow header5">How to:</h5>
+            <div class="my-border">
+              <p class="p-small w-50 mx-auto">
+                1. Register: Sign up and verify your email.
+              </p>
+              <p class="p-small w-50 mx-auto">
+                2. Get Credits: Receive 1000 credits for trading.
+              </p>
+              <p class="p-small w-50 mx-auto">
+                3. Trade: Browse and trade wares using credits.
+              </p>
+              <p class="p-small w-50 mx-auto">
+                4. Sell: List your wares for others to buy. Enjoy your trading
+                experience!
+              </p>
+            </div>
+          </div>
+          <div
+            class="col-md-4 d-flex justify-content-center align-items-center"
+          >
+            <img
+              src="/images/logosmall.png"
+              alt="A logo of an auction hammer"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="container-fluid bg-info">
+        <div
+          class="text-center text-dark border-top p-3 row bg-info fw-bold p-large"
+        >
+          © 2024 AuctiO. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

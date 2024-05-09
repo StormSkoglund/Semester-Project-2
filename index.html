@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Landing page for the Auctio site. Auctio is an online auction house, with hundreds of new exciting items everyday"
+    />
+    <meta name="keywords" content="Auction, live, bidding" />
+    <meta name="author" content="Alex Storm Skoglund" />
     <link rel="stylesheet" href="./dist/css/index.css" />
     <link
       rel="icon"
@@ -35,11 +41,28 @@
         <div>
           <button
             type="button"
-            class="mx-1 logbutton"
+            class="btn logbutton btn-outline-dark"
             data-bs-toggle="modal"
             data-bs-target="#loginModal"
           >
-            Login
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-box-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+              ></path>
+            </svg>
+            Log In
           </button>
           <!-- Button trigger modal -->
           <button
@@ -84,7 +107,11 @@
                 <a class="nav-link text-secondary p-large" href="#">Sell</a>
               </li>
               <li class="nav-item text-secondary">
-                <a class="nav-link text-secondary p-large" href="#">Profile</a>
+                <a
+                  class="nav-link text-secondary p-large"
+                  href="/profile/index.html"
+                  >Profile</a
+                >
               </li>
             </ul>
             <form class="d-flex">
@@ -301,7 +328,10 @@
       >
         Trending Items
       </h2>
-      <div class="w-50 m-auto overflow-y-hidden carousel" id="carousel"></div>
+      <div
+        class="col-12 col-md-6 m-auto overflow-y-hidden carousel"
+        id="carousel"
+      ></div>
 
       <div>
         <h3
@@ -310,7 +340,7 @@
           Listings
         </h3>
         <div
-          class="listingsContainer listings d-flex row my-border-dark m-auto mt-1 mb-1 col-12 col-sm-6"
+          class="container listingsContainer listings d-flex row my-border-dark my-border-thin m-auto mt-1 mb-1 col-12 col-sm-6 vh-25 overflow-y-scroll container-75"
         ></div>
       </div>
     </main>
