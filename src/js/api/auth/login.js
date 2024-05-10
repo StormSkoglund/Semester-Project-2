@@ -1,4 +1,4 @@
-import { authFetch } from "../autFetch.js";
+import { authFetch } from "../authFetch.js";
 import { baseURL, loginEndpoint } from "../constants.js";
 
 export async function login(url, data) {

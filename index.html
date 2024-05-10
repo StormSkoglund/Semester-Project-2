@@ -178,7 +178,7 @@
                     class="form-control"
                     id="email"
                     placeholder="User@stud.noroff.no"
-                    pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                    pattern="^[\w\-.]+@stud\.noroff\.no$"
                     required
                   />
                 </div>
@@ -209,23 +209,14 @@
                   <div class="errorContainer p-small text-danger"></div>
                 </div>
                 <div class="mb-3">
-                  <label for="avatar" class="form-label">Avatar</label>
+                  <label for="avatar" class="form-label"
+                    >Avatar (optional)</label
+                  >
                   <input
                     type="url"
                     class="form-control"
                     id="avatar"
                     placeholder="Enter an URL"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="avatarAlt" class="form-label"
-                    >Avatar Description</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="avatarAlt"
-                    placeholder="Enter a description of your avatar"
                   />
                 </div>
                 <button type="submit" class="btn blue-btn">Register</button>
@@ -277,18 +268,18 @@
             <div class="modal-body">
               <form id="loginForm">
                 <div class="form-group">
-                  <label for="emailInput">Email</label>
+                  <label for="emailInput">Email </label>
                   <input
                     type="email"
                     class="form-control"
                     id="emailInput"
                     placeholder="Enter your email"
-                    pattern="^[\w\-.]+@(stud\.)?noroff\.no$"
+                    pattern="^[\w\-.]+@stud\.noroff\.no$"
                     required
                   />
                 </div>
                 <div class="form-group">
-                  <label for="passwordInput">Password</label>
+                  <label for="passwordInput">Password *</label>
                   <input
                     type="password"
                     class="form-control"

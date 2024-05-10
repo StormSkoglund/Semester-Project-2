@@ -1,4 +1,4 @@
-import { authFetch } from "../autFetch.js";
+import { authFetch } from "../authFetch.js";
 import { baseURL, registerEndpoint } from "../constants.js";
 
 export async function register(user) {

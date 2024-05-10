@@ -49,12 +49,26 @@ async function requestReg() {
   };
   console.log(user);
 
+  // Connor O' Briens solution for allowing blank inputs in the register form.
+  if (avatarValue.trim() !== "") {
+    user.avatar = {
+      url: `${avatarValue}`,
+      alt: `${usernameValue}'s avatar`,
+    };
+  } else {
+    user.avatar = {
+      url: "https://picsum.photos/id/26/800/500",
+      alt: `${usernameValue}'s avatar`,
+    };
+  }
+
   try {
     const regData = await userReg.register(user);
     regInput.successContainer.innerHTML = `User registration successful. Welcome, ${regData.data.name}!`;
     save("userProfile", {
       username: regData.data.name,
       email: regData.data.email,
+      avatar: regData.data.avatar,
     });
 
     document.getElementById("loginBtn").innerHTML = `<button
