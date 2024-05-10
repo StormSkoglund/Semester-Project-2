@@ -73,24 +73,24 @@ export async function carouselListings() {
           <div class="carousel-item active">
             <img src="${mediaContent1}" class="d-block m-auto w-100 img-carousel" alt="${altText1}" />
             <div class="carousel-caption d-md-block">
-              <p class="header1 col-6 text-truncate mt-3 mb-3 m-auto">
-                ${item1.title[0]}.
+              <p class="header1 col-12 text-truncate mt-3 mb-3 m-auto bg-dark rounded opacity-75">
+                ${item1.title}.
               </p>
             </div>
           </div>
           <div class="carousel-item active">
             <img src="${mediaContent2}" class="d-block m-auto w-100 img-carousel" alt="${altText2}" />
             <div class="carousel-caption d-md-block">
-              <p class="header1 col-6 text-truncate mt-3 mb-3 m-auto">
-                ${item2.title[1]}.
+              <p class="header1 col-12 text-truncate mt-3 mb-3 m-auto bg-dark rounded opacity-75">
+                ${item2.title}.
               </p>
             </div>
           </div>
           <div class="carousel-item active">
             <img src="${mediaContent3}" class="d-block m-auto w-100 img-carousel" alt="${altText3}" />
             <div class="carousel-caption d-md-block">
-              <p class="header1 col-6 text-truncate mt-3 mb-3 m-auto">
-                ${item3.title[2]}.
+              <p class="header1 col-12 text-truncate mt-3 mb-3 m-auto bg-dark rounded opacity-75">
+                ${item3.title}.
               </p>
             </div>
           </div>
