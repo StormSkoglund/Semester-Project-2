@@ -9,7 +9,7 @@ export async function getProfile() {
   console.log(response);
   if (!response.ok) {
     throw new Error(
-      json.errors?.[0]?.message || "Failed while fetching profile information"
+      json.errors?.[0]?.message || "Could not fetch profile information"
     );
   }
 

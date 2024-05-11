@@ -26,4 +26,4 @@ export const listingsEndpoint = "auction/listings?_seller=true&_bids=true";
 export const listingsEndpointFiltered = "auction/listings?_tag=&_active=true";
 export const loginEndpoint = "auth/login";
 export const keyEndpoint = "auth/create-api-key";
-export const profileEndpoint = `auction/profiles/${userName}`;
+export const profileEndpoint = `auction/profiles/${userName}?_listings=true&_wins=true`;
