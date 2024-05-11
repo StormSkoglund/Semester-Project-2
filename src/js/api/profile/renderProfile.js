@@ -7,7 +7,7 @@ export async function renderProfile() {
 
   document.getElementById(
     "profileBidInfo"
-  ).innerHTML += `<p class="p-large fs-2 fw-bold m-3">Your Auction Bids</p> <p class="p-small m-3"> Number on listings belonging to ${profileContent.data.name}: ${profileContent.data._count.listings}</div> <p class="p-small m-3"> Number on wins by ${profileContent.data.name}: ${profileContent.data._count.wins}</div>`;
+  ).innerHTML += `<p class="p-large fs-2 fw-bold m-3">Your Auction Bids</p> <p class="p-small m-3"> Number on listings belonging to ${profileContent.data.name}: ${profileContent.data._count.listings}</div> <p class="p-small m-3"> Number of auctions won by ${profileContent.data.name}: ${profileContent.data._count.wins}</div>`;
 
   if (profileContent.data.listings.length > 0) {
     document.getElementById(
