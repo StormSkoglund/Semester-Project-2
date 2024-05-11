@@ -6,7 +6,7 @@ import { apiKey } from "./constants.js";
 export function headers(hasBody = false) {
   const headers = new Headers();
 
-  const token = load("token");
+  const token = load("accessToken");
 
   if (token) {
     headers.append("Authorization", `Bearer ${token}`);

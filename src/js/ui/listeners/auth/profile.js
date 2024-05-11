@@ -15,5 +15,3 @@ export function profile() {
       "Please register or log in to view your account";
   }
 }
-
-profile();
