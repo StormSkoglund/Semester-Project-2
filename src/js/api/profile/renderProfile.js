@@ -25,7 +25,7 @@ export async function renderProfile() {
   <div class="bg-primary my-border-thin p-3 mb-5 mt-2 row col-12 col-md-10 m-auto d-block-inline">
     <h5 class="text-light col-12 col-md-6 m-auto text-center mb-2">Sell items to gain more credit</h5>
     <div class="float-end">
-      <p class="bg-light p-large col-12 col-md-4 m-auto p-3 my-border-thin text-center">${profileContent.data.credits} Credit \uD83D\uDC5B&#xFE0E</p>
+      <p class="bg-light p-large col-12 col-md-4 m-auto p-3 my-border-thin text-center">${profileContent.data.credits} Credits \uD83D\uDC5B&#xFE0E</p>
     </div>
   </div>
 `;
