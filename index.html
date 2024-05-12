@@ -26,6 +26,8 @@
     <script type="module" src="./src/js/ui/listeners/auth/register.js"></script>
     <script type="module" src="/src/js/index.js"></script>
     <script type="module" src="/src/js/ui/listeners/auth/login.js"></script>
+    <script type="module" src="/src/js/api/listings/createListing.js"></script>
+
     <title>Auctio Home Page</title>
   </head>
   <body>
@@ -96,7 +98,7 @@
                 <a
                   class="nav-link active text-secondary fw-bolder p-large"
                   aria-current="page"
-                  href="#"
+                  href="index.html"
                   >Home</a
                 >
               </li>
@@ -104,7 +106,13 @@
                 <a class="nav-link text-secondary p-large" href="#">Buy</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link text-secondary p-large" href="#">Sell</a>
+                <a
+                  class="nav-link text-secondary p-large"
+                  data-bs-toggle="modal"
+                  data-bs-target="#createListing"
+                  href=""
+                  >Sell</a
+                >
               </li>
               <li class="nav-item text-secondary">
                 <a
@@ -279,7 +287,7 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="passwordInput">Password *</label>
+                  <label for="passwordInput">Password </label>
                   <input
                     type="password"
                     class="form-control"
@@ -299,12 +307,130 @@
                     >Remember me</label
                   >
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn blue-btn">Sign in</button>
               </form>
             </div>
             <div class="modal-footer">
               <div class="p-large text-danger" id="displayError"></div>
               <div class="p-large text-warning" id="displaySuccess"></div>
+              <button
+                type="button"
+                class="btn yellow-btn"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Create-Listing/Sell modal -->
+
+      <div
+        class="modal fade"
+        id="createListing"
+        tabindex="-1"
+        aria-labelledby="createListingLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-primary">
+              <h5
+                class="modal-title header1modal text-light"
+                id="exampleModalLabel"
+              >
+                Sell Item
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="createListingForm">
+                <div class="mb-3">
+                  <label for="itemTitle" class="form-label header2"
+                    >Title</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="itemTitle"
+                    placeholder="Enter name"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="itemDescription" class="header4 form-label"
+                    >Description</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="itemDescription"
+                    rows="3"
+                    placeholder="Describe the item"
+                  ></textarea>
+                  <label for="tags" class="header4 mb-2"
+                    >tags separated by commas</label
+                  >
+                  <input
+                    type="text"
+                    id="tags"
+                    class="form-control mb-2"
+                    placeholder="Enter your tags here."
+                  />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label header4">Upload images</label>
+                  <p class="form-text text-muted mb-3 p-small">
+                    Images of good quality and shots from multiple angles tend
+                    to result in better sales.
+                  </p>
+                  <label for="url1" class="header5 mb-2">Image 1</label>
+                  <input
+                    type="url"
+                    id="url1"
+                    class="form-control mb-2"
+                    placeholder="Enter an URL"
+                  />
+                  <label for="url2" class="header5 mb-2">Image 2</label>
+                  <input
+                    type="url"
+                    id="url2"
+                    class="form-control mb-2"
+                    placeholder="Enter an URL"
+                  />
+                  <label for="url3" class="header5 mb-2">Image 3</label>
+                  <input
+                    type="url"
+                    id="url3"
+                    class="form-control mb-2"
+                    placeholder="Enter an URL"
+                  />
+                  <label for="url4" class="header5 mb-2">Image 4</label>
+                  <input
+                    type="url"
+                    id="url4"
+                    class="form-control mb-2"
+                    placeholder="Enter an URL"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="auctionDeadline" class="form-label header3"
+                    >Auction deadline</label
+                  >
+                  <select id="auctionDeadline" class="form-select">
+                    <option value="24">24 hours</option>
+                    <option value="48">48 hours</option>
+                    <option value="72">72 hours</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn blue-btn">Submit</button>
+              </form>
+            </div>
+            <div class="modal-footer">
               <button
                 type="button"
                 class="btn yellow-btn"
