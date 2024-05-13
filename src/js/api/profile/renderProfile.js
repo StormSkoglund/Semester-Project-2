@@ -10,7 +10,7 @@ export async function renderProfile() {
 
     document.getElementById(
       "profileBidInfo"
-    ).innerHTML = `<p class="p-large fs-2 fw-bold mb-1">Your Auction Bids</p>  <p class="p-small m-3"> Number of auctions won by ${profileContent.data.name}: ${profileContent.data._count.wins}</p>`;
+    ).innerHTML = `<p class="p-large fs-2 fw-bold mb-1">Your Auction Bids</p> <p class="p-small mt-1"> Number of auctions won by ${profileContent.data.name}: ${profileContent.data._count.wins}</p>`;
 
     if (profileContent.data.listings.length > 0) {
       profileContent.data.listings.forEach((listing) => {
