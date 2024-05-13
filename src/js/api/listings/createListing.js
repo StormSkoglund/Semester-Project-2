@@ -10,7 +10,16 @@ import {
   url4,
 } from "../constants.js";
 
-var selectedDeadline;
+let selectedDeadline;
+
+const deadlineOptions = document.getElementById("auctionDeadline");
+
+selectedDeadline = deadlineOptions.options[deadlineOptions.selectedIndex].value;
+
+deadlineOptions.addEventListener("change", function () {
+  selectedDeadline = this.options[this.selectedIndex].value;
+  console.log(selectedDeadline);
+});
 
 document
   .getElementById("createListingForm")
@@ -19,23 +28,18 @@ document
 export async function createListing(event) {
   event.preventDefault();
   try {
-    const deadlineOptions = document.getElementById("auctionDeadline");
-
-    deadlineOptions.addEventListener("change", function () {
-      selectedDeadline = this.options[this.selectedIndex].value;
-    });
-
     const titleInput = itemTitle.value;
     const descriptionInput = itemDescription.value;
-    const imageInput1 = url1.value;
-    const imageInput2 = url2.value;
-    const imageInput3 = url3.value;
-    const imageInput4 = url4.value;
+    const imageInput1 = url1.value || "https://picsum.photos/id/26/2000/3000";
+    const imageInput2 = url2.value || "https://picsum.photos/id/26/2000/3000";
+    const imageInput3 = url3.value || "https://picsum.photos/id/26/2000/3000";
+    const imageInput4 = url4.value || "https://picsum.photos/id/26/2000/3000";
 
     // Date Class available at https://mollify.noroff.dev/content/feu1/javascript-1/module-6/lesson-2/date?#formatting-dates "Noroff" (2024) ‘JavaScript 1: Module 6: Lesson 2: Date’, Available at: (Accessed: 12 May 2024).
     var now = new Date();
     now.setHours(now.getHours() + Number(selectedDeadline));
     var realDeadline = now.toISOString();
+    console.log(realDeadline, now);
 
     const listingData = {
       title: `${titleInput}`,

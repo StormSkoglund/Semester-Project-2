@@ -179,6 +179,13 @@ input:required:invalid:not(:placeholder-shown) {
 
 // Image styling
 
+.pro-list-img {
+  width: 30%;
+  height: 45%;
+  box-shadow: 0px 3px 25px $blue;
+  filter: sepia(35%);
+}
+
 .listing-img {
   display: block;
   box-sizing: content-box;
@@ -201,14 +208,14 @@ input:required:invalid:not(:placeholder-shown) {
 }
 
 .carousel {
-  max-height: 35em;
+  max-height: fit-content;
   border: 2px solid $dark;
 }
 
 .img-carousel {
   display: block;
   box-sizing: content-box;
-  height: 35em;
+  height: fit-content;
   border-radius: 5px;
   border: solid 2px $blue;
   box-shadow: 0px 3px 65px $blue;

@@ -1,26 +1,43 @@
+import { renderCountdown } from "../../tools/renderCountdown.js";
+import { displayListings } from "../constants.js";
 import { getProfile } from "./getProfile.js";
 
 export async function renderProfile() {
-  const profileContent = await getProfile();
+  try {
+    const profileContent = await getProfile();
 
-  console.log(profileContent);
+    console.log(profileContent);
 
-  document.getElementById(
-    "profileBidInfo"
-  ).innerHTML += `<p class="p-large fs-2 fw-bold m-3">Your Auction Bids</p> <p class="p-small m-3"> Number on listings belonging to ${profileContent.data.name}: ${profileContent.data._count.listings}</div> <p class="p-small m-3"> Number of auctions won by ${profileContent.data.name}: ${profileContent.data._count.wins}</div>`;
-
-  if (profileContent.data.listings.length > 0) {
     document.getElementById(
-      "listingDetails"
-    ).innerHTML = `<p class="p-large fw-bold fs-2>Your Auction Inventory</p><p class="p-small fs-3 >${profileContent.data.listings.title}</p>`;
-    const mediaItems = profileContent.data.listings.media.url;
-    mediaItems.forEach((mediaItem) => {
-      document.getElementById(
-        "listingDetails"
-      ).innerHTML += `<img class="listing-img" scr"${mediaItem}>" `;
-    });
-  }
-  document.getElementById("creditsContainer").innerHTML = `
+      "profileBidInfo"
+    ).innerHTML = `<p class="p-large fs-2 fw-bold mb-1">Your Auction Bids</p>  <p class="p-small m-3"> Number of auctions won by ${profileContent.data.name}: ${profileContent.data._count.wins}</p>`;
+
+    if (profileContent.data.listings.length > 0) {
+      profileContent.data.listings.forEach((listing) => {
+        let listingAuctionEnd = `${listing.endsAt}`;
+
+        document.getElementById(
+          "listingDetails"
+        ).innerHTML = `<p class="p-large fs-2 fw-bold mb-1">Your Auction Inventory</p><p class="p-large fs-3" >${listing.title}</p>`;
+
+        let countdownContainer = document.createElement("div");
+        let listingContainer = document.createElement("div");
+        listingContainer.appendChild(countdownContainer);
+
+        renderCountdown(listingAuctionEnd, countdownContainer);
+        displayListings.appendChild(listingContainer);
+        if (!displayListings) {
+          displayListings.innerHTML += `Error: ${error.message}`;
+        }
+
+        listing.media.forEach((mediaItem) => {
+          document.getElementById(
+            "listingMedia"
+          ).innerHTML += `<img class="img-fluid col-4 p-1 pro-list-img m-auto" src="${mediaItem.url}" alt="${mediaItem.alt}">`;
+        });
+      });
+    }
+    document.getElementById("creditsContainer").innerHTML = `
   <div class="header4 m-2 col-6 text-center m-auto">Your Wallet</div>
   <div class="bg-primary my-border-thin p-3 mb-5 mt-2 row col-12 col-md-10 m-auto d-block-inline">
     <h5 class="text-light col-12 col-md-6 m-auto text-center mb-2">Sell items to gain more credit</h5>
@@ -29,4 +46,7 @@ export async function renderProfile() {
     </div>
   </div>
 `;
+  } catch (error) {
+    console.error("Error in the profile rendering: ", error);
+  }
 }
