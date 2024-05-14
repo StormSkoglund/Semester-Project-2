@@ -10,30 +10,42 @@ export async function renderProfile() {
 
     document.getElementById(
       "profileBidInfo"
-    ).innerHTML = `<p class="p-large fs-2 fw-bold mb-1">Your Auction Bids</p> <p class="p-small mt-1"> Number of auctions won by ${profileContent.data.name}: ${profileContent.data._count.wins}</p>`;
+    ).innerHTML = `<p class="p-large fs-2 fw-bold mb-1">Your Auction Bids</p> <p class="p-small text-center"> Number of auctions won by ${profileContent.data.name}: ${profileContent.data._count.wins}</p>
+    <p class="p-large fs-2 fw-bold mt-1">Your Auction Inventory</p>`;
 
     if (profileContent.data.listings.length > 0) {
-      profileContent.data.listings.forEach((listing) => {
+      profileContent.data.listings.forEach((listing, index) => {
         let listingAuctionEnd = `${listing.endsAt}`;
 
-        document.getElementById(
-          "listingDetails"
-        ).innerHTML = `<p class="p-large fs-2 fw-bold mb-1">Your Auction Inventory</p><p class="p-large fs-3" >${listing.title}</p>`;
+        let titleElement = document.createElement("p");
+        titleElement.className = "p-large fw-bold fs-4 mt-3";
+        titleElement.textContent = ` ${listing.title}`;
+        document.getElementById("listingDetails").appendChild(titleElement);
+
+        let listingContainer = document.createElement("div");
+        listingContainer.id = `listingContainer${index}`;
+        displayListings.appendChild(listingContainer);
 
         let countdownContainer = document.createElement("div");
-        let listingContainer = document.createElement("div");
-        listingContainer.appendChild(countdownContainer);
+        countdownContainer.id = `countdown${index}`;
+        document
+          .getElementById(`listingContainer${index}`)
+          .appendChild(countdownContainer);
 
         renderCountdown(listingAuctionEnd, countdownContainer);
-        displayListings.appendChild(listingContainer);
-        if (!displayListings) {
-          displayListings.innerHTML += `Error: ${error.message}`;
-        }
+
+        const galleryContainer = document.createElement("div");
+        galleryContainer.id = `listing${index}`;
+        document
+          .getElementById(`listingContainer${index}`)
+          .appendChild(galleryContainer);
 
         listing.media.forEach((mediaItem) => {
-          document.getElementById(
-            "listingMedia"
-          ).innerHTML += `<img class="img-fluid col-4 p-1 pro-list-img m-auto" src="${mediaItem.url}" alt="${mediaItem.alt}">`;
+          let imgElement = document.createElement("img");
+          imgElement.src = mediaItem.url;
+          imgElement.className = "pro-list-img m-3 rounded-1";
+          imgElement.alt = mediaItem.alt;
+          document.getElementById(`listing${index}`).appendChild(imgElement);
         });
       });
     }
@@ -42,7 +54,7 @@ export async function renderProfile() {
   <div class="bg-primary my-border-thin p-3 mb-5 mt-2 row col-12 col-md-10 m-auto d-block-inline">
     <h5 class="text-light col-12 col-md-6 m-auto text-center mb-2">Sell items to gain more credit</h5>
     <div class="float-end">
-      <p class="bg-light p-large col-12 col-md-4 m-auto p-3 my-border-thin text-center">${profileContent.data.credits} Credits \uD83D\uDC5B&#xFE0E</p>
+      <p class="bg-light p-large col-12 col-md-4 m-auto p-3 my-border-thin text-center">${profileContent.data.credits} Credits \uD83D\uDC5B︎</p>
     </div>
   </div>
 `;

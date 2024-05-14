@@ -186,6 +186,11 @@ input:required:invalid:not(:placeholder-shown) {
   filter: sepia(35%);
 }
 
+.listing-shadow {
+  box-shadow: 0px 3px 25px $blue;
+  filter: sepia(35%);
+}
+
 .listing-img {
   display: block;
   box-sizing: content-box;
