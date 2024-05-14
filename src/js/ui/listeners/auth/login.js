@@ -4,7 +4,9 @@ import {
   emailLogin,
   loginEndpoint,
   passwordLogin,
+  userProfile,
 } from "../../../api/constants.js";
+import { load } from "../../../storage/load.js";
 import { save } from "../../../storage/save.js";
 
 document.getElementById("loginForm").addEventListener("submit", requestLogin);
@@ -37,9 +39,17 @@ async function requestLogin(event) {
       ).innerHTML = `User registration successful. Welcome, ${loginUser.data.name}!`;
     }
     // set accesToken og loginstatus
-    const accessToken = loginUser.data.accessToken;
-    save("accessToken", accessToken);
-    save("loginStatus", true);
+    setTimeout(function () {
+      const accessToken = loginUser.data.accessToken;
+      save("accessToken", accessToken);
+      save("loginStatus", true);
+      save("userProfile", {
+        username: loginUser.data.name,
+        email: loginUser.data.email,
+        avatar: loginUser.data.avatar,
+      });
+      window.location.reload();
+    }, 1500);
   } catch (error) {
     document.getElementById(
       "displayError"
