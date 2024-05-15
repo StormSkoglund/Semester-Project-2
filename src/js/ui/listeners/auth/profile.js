@@ -8,9 +8,9 @@ export function profile() {
   console.log(loggedIn, userProfile.email);
 
   if (loggedIn === true && typeof token === "string") {
-    document.getElementById(
+    /* document.getElementById(
       "profileContainer"
-    ).innerHTML += `<p class="header2 text-center">${userProfile.username}</p><img class="d-block col-4 m-auto pro-list-img rounded-circle" src="${userProfile.avatar.url}" alt="${userProfile.avatar.alt}">`;
+    ).innerHTML += `<p class="header2 text-center">${userProfile.username}</p><img class="d-block col-4 m-auto pro-list-img rounded-circle" src="${userProfile.avatar.url}" alt="${userProfile.avatar.alt}">`;*/
   } else {
     document.getElementById(
       "profileContainer"

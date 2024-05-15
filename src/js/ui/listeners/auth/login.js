@@ -4,7 +4,6 @@ import {
   emailLogin,
   loginEndpoint,
   passwordLogin,
-  userProfile,
 } from "../../../api/constants.js";
 import { load } from "../../../storage/load.js";
 import { save } from "../../../storage/save.js";

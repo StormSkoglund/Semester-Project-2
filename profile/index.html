@@ -23,6 +23,10 @@
       defer
     ></script>
     <script src="../src/js/api/profile/index.js" type="module"></script>
+    <script
+      src="../src/js/ui/listeners/auth/updateAvatar.js"
+      type="module"
+    ></script>
 
     <title>Auctio | Profile</title>
   </head>
@@ -116,6 +120,18 @@
       <div class="my-border-thin col-12 col-md-6 m-auto mt-5 mb-5">
         <h2 class="header2 text-dark text-center fw-bold">Welcome</h2>
         <div id="profileContainer" class="p-4"></div>
+        <div id="editContainer">
+          <form class="d-flex col-8 m-auto" id="updateForm">
+            <input
+              class="form-control"
+              type="url"
+              id="updateAvatar"
+              placeholder="Update avatar URL"
+              aria-label="url"
+            />
+            <button class="blue-btn" type="submit">Update Avatar</button>
+          </form>
+        </div>
         <div id="profileBidInfo" class="p-4"></div>
         <div id="listingDetails" class="p-4 listingsContainer"></div>
         <div
