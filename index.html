@@ -28,6 +28,7 @@
     <script type="module" src="/src/js/ui/listeners/auth/login.js"></script>
     <script type="module" src="/src/js/api/listings/createListing.js"></script>
     <script type="module" src="/src/js/api/listings/singleListing.js"></script>
+    <script type="module" src="/src/js/ui/listeners/auth/search.js"></script>
 
     <title>Auctio Home Page</title>
   </head>
@@ -115,7 +116,7 @@
                   class="nav-link text-secondary p-large"
                   data-bs-toggle="modal"
                   data-bs-target="#createListing"
-                  href=""
+                  href="#"
                   >Sell</a
                 >
               </li>
@@ -133,8 +134,11 @@
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
+                id="search"
               />
-              <button class="yellow-btn" type="submit">Search</button>
+              <button class="yellow-btn" type="submit" id="searchButton">
+                Search
+              </button>
             </form>
           </div>
         </div>
@@ -341,10 +345,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header bg-primary">
-              <h5
-                class="modal-title header1modal text-light"
-                id="exampleModalLabel"
-              >
+              <h5 class="modal-title header1modal text-light" id="modalTitle">
                 Sell Item
               </h5>
               <button
@@ -476,12 +477,44 @@
               ></h2>
               <div
                 id="itemGallery"
-                class="my-border-thin d-flex col-10 m-auto align-items-center justify-content-between p-4 overflow-x-scroll"
+                class="my-border-thin d-flex col-12 col-md-10 m-auto align-items-center justify-content-between p-4 overflow-x-scroll"
               ></div>
               <p
                 class="p-large fs-4 text-center my-border-thin mt-1 mb-1"
                 id="modalDescription"
               ></p>
+              <p
+                class="p-large fs-4 text-center mt-1 mb-1"
+                id="modalBidAmount"
+              ></p>
+              <div class="container mt-3">
+                <form>
+                  <div class="mb-3">
+                    <label
+                      for="bidAmount"
+                      class="form-label text-center header3 m-auto d-block"
+                      >Please place your bid</label
+                    >
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="bidAmount"
+                      value="0"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn blue-btn"
+                    id="modalSubmitButton"
+                  >
+                    Submit
+                  </button>
+                  <div
+                    class="p-large d-block text-warning text-center m-auto mt-2"
+                    id="successContainer"
+                  ></div>
+                </form>
+              </div>
             </div>
             <div class="modal-footer">
               <button

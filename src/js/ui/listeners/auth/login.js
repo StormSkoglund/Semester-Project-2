@@ -5,7 +5,6 @@ import {
   loginEndpoint,
   passwordLogin,
 } from "../../../api/constants.js";
-import { load } from "../../../storage/load.js";
 import { save } from "../../../storage/save.js";
 
 document.getElementById("loginForm").addEventListener("submit", requestLogin);

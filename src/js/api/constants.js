@@ -16,6 +16,9 @@ export const url1 = document.getElementById("url1");
 export const url2 = document.getElementById("url2");
 export const url3 = document.getElementById("url3");
 export const url4 = document.getElementById("url4");
+export const setAmount = document.getElementById("bidAmount");
+export const searchInput = document.getElementById("search");
+export const startSearch = document.getElementById("searchButton");
 // Containers
 export const showTryCatchError = document.querySelector(".tryCatchContainer");
 export const successContainer = document.querySelector(".successContainer");

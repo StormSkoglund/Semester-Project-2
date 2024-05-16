@@ -1,3 +1,4 @@
+import { bid } from "../../ui/listeners/bid.js";
 import { authFetch } from "../authFetch.js";
 import { baseURL } from "../constants.js";
 import { renderListings } from "./renderListings.js";
@@ -15,11 +16,19 @@ export async function singleListing(event) {
     console.log(response);
     const displayListData = await response.json();
     console.log(displayListData);
+    const listingId = event.target.dataset.userId;
+    let bidButton = document.getElementById("modalSubmitButton");
 
     document.getElementById("modalTitle").innerText =
       "Item On Sale:  " + displayListData.data.title;
     document.getElementById("modalDescription").innerText =
-      "Description:" + displayListData.data.description;
+      "Description: " + displayListData.data.description;
+    document.getElementById("modalBidAmount").innerText =
+      " Number of bids: " + displayListData.data._count.bids;
+    bidButton.setAttribute("data-id", listingId);
+
+    bidButton.addEventListener("click", bid);
+
     if (displayListData.data.media.length > 0) {
       displayListData.data.media.forEach((mediaItem) => {
         let imgElement = document.createElement("img");
