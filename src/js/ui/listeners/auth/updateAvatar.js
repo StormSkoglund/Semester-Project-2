@@ -15,11 +15,9 @@ export async function updateProfiledata(event) {
   console.log(updatedAvatar);
 
   const newAvatarData = {
-    data: {
-      avatar: {
-        url: `${updatedAvatar}`,
-        alt: "The users avatar",
-      },
+    avatar: {
+      url: `${updatedAvatar}`,
+      alt: "The users avatar",
     },
   };
   const response = await authFetch(baseURL + profileEndpointRaw, {
@@ -32,14 +30,11 @@ export async function updateProfiledata(event) {
   if (!response.ok) {
     throw new Error(json.errors?.[0]?.message || "update failed");
   } else {
-    setTimeout(function () {
-      const userProfile = load("userProfile");
-      userProfile.avatar.url = json.data.avatar.url;
-      save("userProfile", userProfile);
+    const userProfile = load("userProfile");
+    userProfile.avatar.url = json.data.avatar.url;
+    save("userProfile", userProfile);
 
-      location.reload(true);
-      location.reload(true);
-    }, 2000);
+    location.reload(true);
   }
 
   return await json;

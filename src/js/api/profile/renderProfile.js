@@ -39,6 +39,8 @@ export async function renderProfile() {
 
         const galleryContainer = document.createElement("div");
         galleryContainer.id = `listing${index}`;
+        galleryContainer.className =
+          "d-flex col-12 align-items-center justify-content-between p-4 overflow-y-scroll";
         document
           .getElementById(`listingContainer${index}`)
           .appendChild(galleryContainer);
@@ -62,6 +64,6 @@ export async function renderProfile() {
   </div>
 `;
   } catch (error) {
-    console.error("Error in the profile rendering: ", error);
+    console.error("Error displaying rendering: ", error);
   }
 }

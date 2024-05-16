@@ -1,5 +1,6 @@
 import { baseURL, listingsEndpoint } from "../constants.js";
 import { fetchListings } from "./fetchListings.js";
+import { singleListing } from "./singleListing.js";
 
 export async function carouselListings() {
   try {
@@ -15,7 +16,7 @@ export async function carouselListings() {
       .slice(0, 3)
       .forEach((trendingItem, index) => {
         let item = trendingItems.data[index];
-        // default imagery and alternate text, in case of missing data in fetched items.
+        // default imagery and alternate text, in case of missing data in fetched items. Demonstrated by Martin Krüger in a live session during the JS2 CA.
         let mediaContent =
           item.media && item.media[index]
             ? item.media[index].url

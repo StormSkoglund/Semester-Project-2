@@ -27,6 +27,7 @@
     <script type="module" src="/src/js/index.js"></script>
     <script type="module" src="/src/js/ui/listeners/auth/login.js"></script>
     <script type="module" src="/src/js/api/listings/createListing.js"></script>
+    <script type="module" src="/src/js/api/listings/singleListing.js"></script>
 
     <title>Auctio Home Page</title>
   </head>
@@ -103,7 +104,11 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-secondary p-large" href="#">Buy</a>
+                <a
+                  class="nav-link text-secondary p-large"
+                  href="#listingsSection"
+                  >Buy</a
+                >
               </li>
               <li class="nav-item">
                 <a
@@ -443,6 +448,54 @@
           </div>
         </div>
       </div>
+
+      <!--singleListing modal-->
+
+      <div
+        id="singleListingModal"
+        class="modal fade"
+        tabindex="-1"
+        aria-labelledby="registerModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-primary position-relative">
+              <h1 class="header1 fs-1 bg-primary text-white">Bid On Item</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <h2
+                class="header-2 fs-3 text-center my-border-thin mt-1 mb-1"
+                id="modalTitle"
+              ></h2>
+              <div
+                id="itemGallery"
+                class="my-border-thin d-flex col-10 m-auto align-items-center justify-content-between p-4 overflow-x-scroll"
+              ></div>
+              <p
+                class="p-large fs-4 text-center my-border-thin mt-1 mb-1"
+                id="modalDescription"
+              ></p>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn yellow-btn"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Modal carousel from Getbootstrap.com [available from] https://getbootstrap.com/docs/5.3/components/carousel (Viewed on Mai 8-2024). -->
       <h2
         class="header3 m-auto mb-4 text-center col-12 col-sm-6 col-sm-3 my-border-dark listings"
@@ -461,6 +514,7 @@
           Listings
         </h3>
         <div
+          id="listingsSection"
           class="container listingsContainer listings d-flex row my-border-dark my-border-thin m-auto mt-1 mb-1 col-12 col-sm-6 vh-25 overflow-y-auto container-75"
         ></div>
       </div>

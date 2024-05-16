@@ -180,8 +180,19 @@ input:required:invalid:not(:placeholder-shown) {
 // Image styling
 
 .pro-list-img {
-  width: 10em;
-  height: 10em;
+  width: 30em;
+  height: 30em;
+  display: block;
+  margin: auto;
+  box-shadow: 0px 3px 25px $blue;
+  filter: sepia(35%);
+}
+
+.bid-img {
+  width: 20em;
+  height: 20em;
+  display: block;
+  margin: auto;
   box-shadow: 0px 3px 25px $blue;
   filter: sepia(35%);
 }
