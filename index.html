@@ -312,9 +312,6 @@
                     class="form-check-input"
                     id="rememberCheck"
                   />
-                  <label class="form-check-label" for="rememberCheck"
-                    >Remember me</label
-                  >
                 </div>
                 <button type="submit" class="btn blue-btn">Sign in</button>
               </form>
@@ -488,6 +485,10 @@
                 id="modalBidAmount"
               ></p>
               <div class="container mt-3">
+                <div
+                  class="p-large d-block my-border-thin text-info text-center m-auto mt-2"
+                  id="amountContainer"
+                ></div>
                 <form>
                   <div class="mb-3">
                     <label
@@ -499,6 +500,7 @@
                       type="number"
                       class="form-control"
                       id="bidAmount"
+                      placeholder="Your bid must exceed the highest amount"
                       value="0"
                     />
                   </div>
@@ -509,6 +511,10 @@
                   >
                     Submit
                   </button>
+                  <div
+                    class="p-large d-block text-danger text-center m-auto mt-2"
+                    id="errorContainer"
+                  ></div>
                   <div
                     class="p-large d-block text-warning text-center m-auto mt-2"
                     id="successContainer"
