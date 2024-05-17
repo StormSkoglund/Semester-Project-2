@@ -73,10 +73,13 @@ export async function createListing(event) {
     console.log(response);
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Could not create listing");
-    } else alert("Listing created");
+    } else
+      document.getElementById("listingSaved").innerText = "Listing created";
 
     return await json;
   } catch (error) {
-    alert(`Could not create listing: ${error}`);
+    document.getElementById(
+      "listingDenied"
+    ).innerText = `Listing created, could not create listing: ${error}`;
   }
 }

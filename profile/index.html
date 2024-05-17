@@ -30,6 +30,9 @@
     <script type="module" src="/src/js/api/listings/createListing.js"></script>
     <script type="module" src="/src/js/api/listings/singleListing.js"></script>
     <script type="module" src="/src/js/ui/listeners/auth/search.js"></script>
+    <script type="module" src="/src/js/api/profile/index.js"></script>
+    <script type="module" src="/src/js/ui/listeners/auth/login.js"></script>
+    <script type="module" src="/src/js/ui/listeners/auth/register.js"></script>
 
     <title>Auctio | Profile</title>
   </head>
@@ -44,7 +47,40 @@
           class="mt-2 mb-2 ml-auto col-4 col-md-3"
         />
         <div>
-          <button type="button" class="btn logbutton" id="logOut">
+          <button
+            type="button"
+            class="btn logbutton btn-outline-dark"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+            style="display: block"
+            id="logIn"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-box-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+              ></path>
+              <path
+                fill-rule="evenodd"
+                d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708z"
+              ></path>
+            </svg>
+            Log In
+          </button>
+          <!--Log out -->
+          <button
+            type="button"
+            class="btn logbutton"
+            style="display: none"
+            id="logOut"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -65,6 +101,16 @@
             Log Out
           </button>
           <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="mx-1 blue-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#registerModal"
+            style="display: block"
+            id="register"
+          >
+            Register
+          </button>
         </div>
       </div>
       <nav
@@ -246,6 +292,14 @@
                     placeholder="Enter an URL"
                   />
                 </div>
+                <div
+                  class="p-large bold text-warning m-auto d-block"
+                  id="listingSaved"
+                ></div>
+                <div
+                  class="p-large bold text-danger m-auto d-block"
+                  id="listingDenied"
+                ></div>
                 <div class="mb-3">
                   <label for="auctionDeadline" class="form-label header3"
                     >Auction deadline</label
@@ -272,6 +326,181 @@
           </div>
         </div>
       </div>
+      <!-- Registration Modal -->
+      <div
+        class="modal fade"
+        id="registerModal"
+        tabindex="-1"
+        aria-labelledby="registerModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header bg-primary position-relative">
+              <h1
+                class="modal-title header1modal text-light"
+                id="registerModalLabel"
+              >
+                Registration
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!--Registration Form-->
+              <form id="regSubmit">
+                <div class="mb-3">
+                  <label for="username" class="form-label">Username</label>
+                  <input
+                    pattern="^[\w]+$"
+                    maxlength="20"
+                    type="text"
+                    class="form-control"
+                    id="username"
+                    placeholder="example"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="User@stud.noroff.no"
+                    pattern="^[\w\-.]+@stud\.noroff\.no$"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Create a password (must be at least 8 characters long)."
+                    pattern=".{8,}"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="confirm-password" class="form-label"
+                    >Password (Confirm)</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="confirmPassword"
+                    placeholder="Confirm password"
+                    pattern=".{8,}"
+                    required
+                  />
+                  <div class="errorContainer p-small text-danger"></div>
+                </div>
+                <div class="mb-3">
+                  <label for="avatar" class="form-label"
+                    >Avatar (optional)</label
+                  >
+                  <input
+                    type="url"
+                    class="form-control"
+                    id="avatar"
+                    placeholder="Enter an URL"
+                  />
+                </div>
+                <button type="submit" class="btn blue-btn">Register</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div class="tryCatchContainer p-small text-danger"></div>
+              <div class="successContainer p-small text-warning"></div>
+              <div id="loginBtn"></div>
+              <div id="close">
+                <button
+                  type="button"
+                  class="btn yellow-btn"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bootstrap Modal for Login Form -->
+      <div
+        class="modal fade"
+        id="loginModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="loginModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-primary">
+              <h5
+                class="modal-title header1modal text-center text-light"
+                id="loginModalLabel"
+              >
+                Log-In
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form id="loginForm">
+                <div class="form-group">
+                  <label for="emailInput">Email </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="emailInput"
+                    placeholder="Enter your email"
+                    pattern="^[\w\-.]+@stud\.noroff\.no$"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="passwordInput">Password </label>
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="passwordInput"
+                    placeholder="Password"
+                    pattern=".{8,}"
+                    required
+                  />
+                </div>
+
+                <button type="submit" class="btn blue-btn">Sign in</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <div class="p-large text-danger" id="displayError"></div>
+              <div class="p-large text-warning" id="displaySuccess"></div>
+              <button
+                type="button"
+                class="btn yellow-btn"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div class="container-fluid bg-primary text-white p-4 shadow-sm">
@@ -287,7 +516,7 @@
             <h5 class="text-yellow header5">How to:</h5>
             <div class="my-border">
               <p class="p-small w-50 mx-auto">
-                1. Register: Sign up and verify your email.
+                1. Register: Sign up and log in.
               </p>
               <p class="p-small w-50 mx-auto">
                 2. Get Credits: Receive 1000 credits for trading.
