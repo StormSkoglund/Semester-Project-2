@@ -13,8 +13,8 @@ export async function renderProfile() {
 
     document.getElementById(
       "profileBidInfo"
-    ).innerHTML = `<p class="p-large fs-2 fw-bold mb-1">Your Auction Bids</p> <p class="p-small text-center"> Number of auctions won by ${profileContent.data.name}: ${profileContent.data._count.wins}</p>
-    <p class="p-large fs-2 fw-bold mt-1">Your Auction Inventory</p>`;
+    ).innerHTML = `<p class="p-large fs-2 fw-bold mb-1">Your Auction Bids</p> <p class="p-small fs-3"> Number of auctions won by ${profileContent.data.name}: ${profileContent.data._count.wins}</p>
+    <p class="p-large fs-2 fw-bold mt-1">Your Auction Inventory</p> <p class="p-small fs-3" > Number of items for sale: ${profileContent.data._count.listings}</p> `;
 
     if (profileContent.data.listings.length > 0) {
       profileContent.data.listings.forEach((listing, index) => {
@@ -57,7 +57,7 @@ export async function renderProfile() {
     document.getElementById("creditsContainer").innerHTML = `
   <div class="header4 m-2 col-6 text-center m-auto">Your Wallet</div>
   <div class="bg-primary my-border-thin p-3 mb-5 mt-2 row col-12 col-md-10 m-auto d-block-inline">
-    <h5 class="text-light col-12 col-md-6 m-auto text-center mb-2">Sell items to gain more credit</h5>
+    <div class="text-light header-5 col-12 col-md-6 m-auto text-center mb-2">Sell items to gain more credit</div>
     <div class="float-end">
       <p class="bg-light p-large col-12 col-md-4 m-auto p-3 my-border-thin text-center">${profileContent.data.credits} Credits \uD83D\uDC5B︎</p>
     </div>

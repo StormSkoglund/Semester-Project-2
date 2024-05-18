@@ -1,6 +1,7 @@
 import * as userReg from "../../../api/auth/register.js";
 import * as regInput from "../../../api/constants.js";
 import { save } from "../../../storage/save.js";
+import { tryCatchError } from "../../../tools/tryCatchError.js";
 
 // Form Validation (Compare passwords)
 document
@@ -80,6 +81,6 @@ async function requestReg() {
     document.getElementById("close").innerHTML = "";
     console.log(regData);
   } catch (error) {
-    regInput.showTryCatchError.innerHTML = "Registration failed: " + error;
+    tryCatchError(error);
   }
 }

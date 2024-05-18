@@ -32,6 +32,7 @@ async function requestLogin(event) {
     const loginUser = await login(URL, loginUserData);
     console.log(loginUser);
     if (loginUser) {
+      document.getElementById("displayError").innerHTML = "";
       document.getElementById(
         "displaySuccess"
       ).innerHTML = `User registration successful. Welcome, ${loginUser.data.name}!`;
@@ -51,6 +52,6 @@ async function requestLogin(event) {
   } catch (error) {
     document.getElementById(
       "displayError"
-    ).innerHTML = `Registration failed: ${error}`;
+    ).innerHTML = `Login failed: ${error}`;
   }
 }

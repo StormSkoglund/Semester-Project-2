@@ -26,8 +26,8 @@ export async function bid(event) {
     } else
       document.getElementById("successContainer").innerText =
         "Bid was successful. If you win, you will get notified by email, and we will present you with shipping options.";
+    return await json;
   } catch (error) {
     document.getElementById("errorContainer").innerText = "Error: " + error;
   }
-  return await json;
 }

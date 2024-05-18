@@ -104,7 +104,7 @@
           <!-- Button trigger modal -->
           <button
             type="button"
-            class="mx-1 blue-btn"
+            class="mx-1 blue-btn mb-2"
             data-bs-toggle="modal"
             data-bs-target="#registerModal"
             style="display: block"
@@ -149,6 +149,7 @@
                   data-bs-toggle="modal"
                   data-bs-target="#createListing"
                   href="#"
+                  id="sellLink"
                   >Sell</a
                 >
               </li>
@@ -183,15 +184,10 @@
       <div class="container-fluid col-8 m-auto mb-2" id="searchContainer"></div>
       <div class="my-border-thin col-12 col-md-6 m-auto mt-5 mb-5">
         <h2 class="header2 text-dark text-center fw-bold">Welcome</h2>
-        <div id="profileContainer" class="p-4">
-          <div class="text-center">
-            <div class="spinner-border" role="status">
-              <span class="visually-hidden" id="loaderCarousel"
-                >Loading...</span
-              >
-            </div>
-          </div>
-        </div>
+        <div id="profileContainer" class="p-4"></div>
+        <div
+          class="tryCatchContainer text-danger d-block m-auto text-center m-2"
+        ></div>
         <div id="editContainer">
           <form class="d-flex col-8 m-auto" id="updateForm">
             <input
@@ -223,7 +219,10 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header bg-primary">
-              <h5 class="modal-title header1modal text-light" id="modalTitle">
+              <h5
+                class="modal-title header1modal text-light"
+                id="modalTitleSell"
+              >
                 Sell Item
               </h5>
               <button
@@ -301,14 +300,7 @@
                     placeholder="Enter an URL"
                   />
                 </div>
-                <div
-                  class="p-large bold text-warning m-auto d-block"
-                  id="listingSaved"
-                ></div>
-                <div
-                  class="p-large bold text-danger m-auto d-block"
-                  id="listingDenied"
-                ></div>
+
                 <div class="mb-3">
                   <label for="auctionDeadline" class="form-label header3"
                     >Auction deadline</label
@@ -322,6 +314,14 @@
                 </div>
                 <button type="submit" class="btn blue-btn">Submit</button>
               </form>
+              <div
+                class="p-large bold text-warning m-auto d-block"
+                id="listingSaved"
+              ></div>
+              <div
+                class="p-large bold text-danger m-auto d-block"
+                id="listingDenied"
+              ></div>
             </div>
             <div class="modal-footer">
               <button
@@ -493,10 +493,11 @@
                   />
                 </div>
 
-                <button type="submit" class="btn blue-btn">Sign in</button>
+                <button type="submit" class="btn blue-btn mt-2">Sign in</button>
               </form>
             </div>
             <div class="modal-footer">
+              <div class="p-large text-danger tryCatchContainer"></div>
               <div class="p-large text-danger" id="displayError"></div>
               <div class="p-large text-warning" id="displaySuccess"></div>
               <button
