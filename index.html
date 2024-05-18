@@ -574,10 +574,18 @@
       >
         Trending Items
       </h2>
+      <!-- loader anim from Getbootstrap.com [available from] https://getbootstrap.com/docs/5.3/components/spinners/#about (Viewed on Mai 18-2024).-->
+
       <div
         class="col-12 col-md-8 m-auto overflow-y-hidden carousel"
         id="carousel"
-      ></div>
+      >
+        <div class="text-center">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden" id="loaderCarousel">Loading...</span>
+          </div>
+        </div>
+      </div>
 
       <div>
         <h3
@@ -588,7 +596,15 @@
         <div
           id="listingsSection"
           class="container listingsContainer listings d-flex row my-border-dark my-border-thin m-auto mt-1 mb-1 col-12 col-sm-6 vh-25 overflow-y-auto container-75"
-        ></div>
+        >
+          <div class="text-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden" id="loaderCarousel"
+                >Loading...</span
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </main>
     <footer>

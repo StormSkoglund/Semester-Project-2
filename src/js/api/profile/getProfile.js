@@ -11,7 +11,7 @@ export async function getProfile() {
     throw new Error(
       json.errors?.[0]?.message || "Could not fetch profile information"
     );
-  }
+  } else document.getElementById("profileContainer").innerHTML = "";
 
   return await json;
 }

@@ -1,6 +1,5 @@
 import { baseURL, listingsEndpoint } from "../constants.js";
 import { fetchListings } from "./fetchListings.js";
-import { singleListing } from "./singleListing.js";
 
 export async function carouselListings() {
   try {

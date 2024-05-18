@@ -19,10 +19,6 @@
     />
 
     <script
-      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-      defer
-    ></script>
-    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
@@ -187,7 +183,15 @@
       <div class="container-fluid col-8 m-auto mb-2" id="searchContainer"></div>
       <div class="my-border-thin col-12 col-md-6 m-auto mt-5 mb-5">
         <h2 class="header2 text-dark text-center fw-bold">Welcome</h2>
-        <div id="profileContainer" class="p-4"></div>
+        <div id="profileContainer" class="p-4">
+          <div class="text-center">
+            <div class="spinner-border" role="status">
+              <span class="visually-hidden" id="loaderCarousel"
+                >Loading...</span
+              >
+            </div>
+          </div>
+        </div>
         <div id="editContainer">
           <form class="d-flex col-8 m-auto" id="updateForm">
             <input
