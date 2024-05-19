@@ -5,25 +5,19 @@
 Auctio - The Art of the Deal, Your Portal to Online Auctions!
 
 Course-assignment description:
-Build an online auction house. Create an attractive and responsive client application using the provided API and API documentation, allowing users to sell items, view wares and bid on the ones they fancy.
+Build an online auction house. An attractive and responsive client application should be developed using the provided API and documentation. This will enable users to sell items, view available products, and place bids on items they are interested in.
 
-website was made using SASS, Bootstrap, Vanilla JavaScript, HTML, and CSS. The design was created in Figma, and Trello was used for project management.
+The site should only be build using css frameworks and vanilla JavaScript.
 
-The Musync website was made using SASS, Bootstrap, Vanilla JavaScript, HTML, and CSS. The design was created in Figma, and Trello was used for project management. It comprises several features, including:
+The Auctio website was made using SASS, Bootstrap, Vanilla JavaScript, and HTML. The design was created in Figma, and Trello and github projects were used for project management.
 
-- Registration using @stud.noroff.no or @noroff.no email addresses.
-- Log in with your registered username, email and password.
-- Form validation with HTML.
-- You can fetch and view a feed of posts.
-- You can create social media posts on the site.
-- Filter social media posts by date.
-- Search for specific social media posts by title.
-- Select and view posts in a separate window.
-- Update and delete your own posts.
-
+How to install -
 Installation Steps:
 
-1. Clone the repository using https://github.com/StormSkoglund/JS2
-2. To install the dependencies, please use the following command: "npm install bootstrap@5.3.2".
+1. Clone the repository using https://github.com/StormSkoglund/Semester-Project-2
+2. To install the dependencies, please use the following command: "npm i".
 3. Install live-server using "npm install live-server"
 4. To run, type "npm run dev" in the terminal.
+5. To launch live-server only, type "npm run start".
+
+Static host : https://auctio.netlify.app/
