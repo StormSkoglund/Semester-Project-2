@@ -20325,6 +20325,10 @@ input:required:invalid:not(:placeholder-shown) {
   max-height: 75vh;
 }
 
+.container-small {
+  max-height: 350px;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }
