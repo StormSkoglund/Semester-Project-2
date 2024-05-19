@@ -1,0 +1,287 @@
+// Configuration
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "variables";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+// bootstrap import
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+// custom modifications
+
+// Custom colors:
+
+$yellow: rgb(240, 193, 14, 1);
+$blue: rgb(102, 105, 145, 1);
+$dark: rgb(51, 52, 70, 1);
+// Custom colors ruler:
+// Yellow ruler
+hr.hr-yellow {
+  border-top: 3px solid $yellow;
+}
+
+// Custom buttons
+button.yellow-btn {
+  background-color: $yellow;
+  padding: 0.6rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Source Sans Pro", "Times New Roman", Times, serif;
+  border: none;
+  border-radius: 15%;
+  color: $dark;
+}
+
+.logbutton {
+  padding: 0.6rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Source Sans Pro", "Times New Roman", Times, serif;
+  text-decoration: none;
+  background: none;
+  border: none;
+}
+
+button.blue-btn {
+  background-color: $blue;
+  padding: 0.6rem;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Source Sans Pro", "Times New Roman", Times, serif;
+  border: none;
+  border-radius: 15%;
+  color: $light;
+}
+
+.navbar-toggler-icon {
+  background-image: url("/images/hamburger.png");
+}
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler:active,
+.navbar-toggler:focus {
+  outline: none;
+  text-shadow: 2px 3px 5px $dark;
+  border: none;
+  box-shadow: none;
+}
+// Hover states
+button.yellow-btn:hover {
+  box-shadow: 2px 3px 5px $dark;
+}
+
+button.blue-btn:hover {
+  box-shadow: 2px 3px 5px $dark;
+}
+
+.nav-link:hover {
+  text-shadow: 2px 3px 5px $dark;
+}
+
+.logbutton:hover {
+  text-shadow: 2px 3px 5px $dark;
+}
+
+// custom fonts
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&family=Molengo&family=Kaushan+Script&display=swap");
+@mixin custom-font(
+  $font-family,
+  $font-weight,
+  $font-size,
+  $line-height,
+  $letter-spacing
+) {
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}
+
+// Header 1 styles
+.header1 {
+  @include custom-font("Kaushan Script", "regular", 64px, 1.2, 0%);
+}
+
+.header1modal {
+  @include custom-font("Kaushan Script", "regular", 32px, 1.2, 0%);
+}
+
+// Header 2 styles
+.header2 {
+  @include custom-font("Source Sans Pro", "bold", 40px, 1.2, 0%);
+}
+
+// Header 3 styles
+.header3 {
+  @include custom-font("Source Sans Pro", "regular", 32px, 1.2, 0%);
+}
+
+// Header 4 styles
+.header4 {
+  @include custom-font("Source Sans Pro", "regular", 24px, 1.2, 0%);
+}
+
+// Header 5 styles
+.header5 {
+  @include custom-font("Source Sans Pro", "regular", 20px, 1.2, 0%);
+}
+
+// Paragraph Large styles
+.p-large {
+  @include custom-font("Molengo", "regular", 20px, 1.2, 0%);
+}
+
+// Paragraph styles
+.p-small {
+  @include custom-font("Molengo", "regular", 16px, 1.2, 0%);
+}
+.button {
+  @include custom-font("Source Sans Pro", "bold", 20px, 1.2, 0%);
+}
+
+// border styles
+.my-border {
+  border-top: 2px solid $yellow;
+  border-bottom: 3px solid $yellow;
+}
+
+.my-border-dark {
+  border-top: 2px solid $dark;
+  border-bottom: 3px solid $dark;
+}
+
+.my-border-blue {
+  border-top: 1.5px solid $blue;
+  border-bottom: 1.5px solid $blue;
+  box-shadow: 1px 0px 15px $dark;
+}
+
+.my-border-bottom {
+  border-bottom: 2px solid $dark;
+}
+
+input:required:invalid:not(:placeholder-shown) {
+  border: 2px solid red;
+}
+
+.my-border-thin {
+  border: 0.8px solid $dark;
+}
+
+// My containers
+
+.listings {
+  max-height: min-content;
+}
+
+// Image styling
+
+.pro-list-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: auto;
+  box-shadow: 0px 3px 25px $blue;
+  filter: sepia(35%);
+}
+
+.pro-avatar-img {
+  width: 15em;
+  height: 15em;
+  display: block;
+  margin: auto;
+  box-shadow: 0px 3px 25px $blue;
+  filter: sepia(35%);
+}
+
+.bid-img {
+  width: 90%;
+  height: 90%;
+  display: block;
+  margin: auto;
+  box-shadow: 0px 3px 25px $blue;
+  filter: sepia(35%);
+}
+
+.listing-shadow {
+  box-shadow: 0px 3px 25px $blue;
+  filter: sepia(35%);
+}
+
+.listing-img {
+  display: block;
+  box-sizing: content-box;
+  width: 45%;
+  height: auto;
+  border-radius: 5px;
+  border: solid 2px $blue;
+  box-shadow: 0px 3px 65px $blue;
+  filter: sepia(35%);
+}
+
+.listing-img-search {
+  display: block;
+  box-sizing: border-box;
+  width: 50%;
+  margin: auto;
+  height: auto;
+  border-radius: 5px;
+  border: solid 2px $blue;
+  box-shadow: 0px 3px 65px $blue;
+  filter: sepia(35%);
+}
+
+.listing-img-large {
+  display: block;
+  box-sizing: content-box;
+  height: auto;
+  border-radius: 5px;
+  border: solid 2px $blue;
+  box-shadow: 0px 3px 65px $blue;
+  filter: sepia(35%);
+}
+
+.carousel {
+  max-height: fit-content;
+  border: 2px solid $dark;
+}
+
+.img-carousel {
+  display: block;
+  box-sizing: content-box;
+  height: fit-content;
+  border-radius: 5px;
+  border: solid 2px $blue;
+  box-shadow: 0px 3px 65px $blue;
+  filter: sepia(35%);
+}
+
+// listings-container
+
+.container-75 {
+  max-height: 75vh;
+}
+
+.container-small {
+  max-height: 350px;
+}
+
+// Custom scrollbar
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $blue;
+  border-radius: 50px;
+  border: 3px solid transparent;
+}
