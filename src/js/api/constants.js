@@ -27,6 +27,7 @@ export const displayListings = document.querySelector(".listingsContainer");
 export const apiKey = "3adf45c0-1ffd-48f3-9235-e2a640950e28";
 export const userProfile = load("userProfile");
 export const userName = userProfile?.username;
+export const isLoggedIn = load("loginStatus");
 
 // URL
 export const baseURL = "https://v2.api.noroff.dev/";

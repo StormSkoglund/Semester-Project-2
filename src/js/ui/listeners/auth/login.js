@@ -36,6 +36,8 @@ async function requestLogin(event) {
       document.getElementById(
         "displaySuccess"
       ).innerHTML = `User registration successful. Welcome, ${loginUser.data.name}!`;
+      emailLogin.value = "";
+      passwordLogin.value = "";
     }
     // set accesToken og loginstatus
     setTimeout(function () {

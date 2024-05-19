@@ -1,21 +1,18 @@
 import { bid } from "../../ui/listeners/bid.js";
 import { authFetch } from "../authFetch.js";
-import { baseURL } from "../constants.js";
-import { renderListings } from "./renderListings.js";
+import { baseURL, isLoggedIn } from "../constants.js";
 
 export async function singleListing(event) {
   try {
     document.getElementById("itemGallery").innerHTML = "";
     const listingId = event.target.dataset.userId;
-    const listing = await renderListings();
-    console.log(listing);
     const singleListingEndpoint =
       "auction/listings/" + listingId + "?_seller=true&_bids=true";
     const response = await authFetch(baseURL + singleListingEndpoint, {
       method: "GET",
     });
+
     if (response.ok) {
-      console.log(response);
       const displayListData = await response.json();
       console.log(displayListData);
       const listingId = event.target.dataset.userId;
@@ -32,9 +29,12 @@ export async function singleListing(event) {
       document.getElementById("modalBidAmount").innerText =
         " Number of bids: " + displayListData.data._count.bids;
       bidButton.setAttribute("data-id", listingId);
-
-      bidButton.addEventListener("click", bid);
-
+      if (isLoggedIn) {
+        bidButton.addEventListener("click", bid);
+      } else {
+        bidButton.disabled = true;
+        bidButton.innerText = "Please register to place a bid";
+      }
       let bids = displayListData.data.bids;
 
       if (bids.length > 0) {

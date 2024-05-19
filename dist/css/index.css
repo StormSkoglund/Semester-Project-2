@@ -20287,8 +20287,9 @@ input:required:invalid:not(:placeholder-shown) {
 
 .listing-img-search {
   display: block;
-  box-sizing: content-box;
-  width: 90%;
+  box-sizing: border-box;
+  width: 70%;
+  margin: auto;
   height: auto;
   border-radius: 5px;
   border: solid 2px rgb(102, 105, 145);

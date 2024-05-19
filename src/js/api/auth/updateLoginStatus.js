@@ -1,4 +1,4 @@
-import { load } from "../../storage/load.js";
+import { isLoggedIn } from "../constants.js";
 
 export function updateLoginStatus() {
   let logoutButton = document.getElementById("logOut");
@@ -6,8 +6,6 @@ export function updateLoginStatus() {
   let registerButton = document.getElementById("register");
   let sellLink = document.getElementById("sellLink");
   let profileLink = document.getElementById("profileLink");
-
-  const isLoggedIn = load("loginStatus");
 
   if (isLoggedIn) {
     logoutButton.style.display = "block";

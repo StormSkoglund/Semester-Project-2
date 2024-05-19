@@ -45,7 +45,7 @@
         <img
           src="/images/logo.png"
           alt="The company Auctio name is written in white letters, with an auction hammer inside the o"
-          class="mt-2 mb-2 ml-auto col-4 col-md-3"
+          class="mt-2 mb-2 ml-auto col-5 col-md-3"
         />
         <div>
           <button
@@ -181,7 +181,14 @@
     </header>
     <main>
       <h1 class="text-center header1">Profile</h1>
-      <div class="container-fluid col-8 m-auto mb-2" id="searchContainer"></div>
+      <div
+        class="container-fluid col-12 m-auto mb-2"
+        id="searchContainer"
+      ></div>
+      <div
+        class="d-block text-center p-large fs-5 text-danger"
+        id="searchErrorContainer"
+      ></div>
       <div class="my-border-thin col-12 col-md-6 m-auto mt-5 mb-5">
         <h2 class="header2 text-dark text-center fw-bold">Welcome</h2>
         <div id="profileContainer" class="p-4"></div>
@@ -200,11 +207,10 @@
             <button class="blue-btn" type="submit">Update Avatar</button>
           </form>
         </div>
+        <div id="creditsContainer" class="mt-4"></div>
         <div id="profileBidInfo" class="p-4"></div>
         <div id="listingDetails" class="p-4 listingsContainer"></div>
         <div id="listingMedia"></div>
-
-        <div id="creditsContainer"></div>
       </div>
 
       <!-- Create-Listing/Sell modal -->

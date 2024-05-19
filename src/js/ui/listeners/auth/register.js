@@ -72,6 +72,11 @@ async function requestReg() {
       avatar: regData.data.avatar,
     });
 
+    regInput.email.value = "";
+    regInput.username.value = "";
+    regInput.password.value = "";
+    regInput.avatar.value = "";
+
     document.getElementById("loginBtn").innerHTML = `<button
     type="button"
     class="mx-1 blue-btn"
