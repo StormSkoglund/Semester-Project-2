@@ -23,7 +23,7 @@ export async function renderListings() {
       let listingContainer = document.createElement("div");
 
       let htmlContent = `
-      <div class="header3 col-5 text-truncate mt-3 mb-3">${listing.title}</div>
+      <div class="col-5 text-truncate mt-3 mb-3 fs-5 header1 fs-md-1">${listing.title}</div>
       <img class="mx-2 mb-5 align-self-start h-auto listing-img" src="${mediaContent}" alt="${altText}" /> 
       <div class="d-flex justify-content-end "><p class="p-large">Number of bids: ${listing._count.bids}</p></div>
       <div class="d-flex justify-content-end "><p class="p-large me-2">Seller: </p><p class="p-large text-warning">${listing.seller.name}</p></div>`;
