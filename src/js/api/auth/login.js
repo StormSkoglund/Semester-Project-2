@@ -9,7 +9,7 @@ export async function login(url, data) {
   const response = await authFetch(baseURL + loginEndpoint, loginData);
 
   const json = await response.json();
-  console.log(response);
+
   if (!response.ok) {
     throw new Error(json.errors?.[0]?.message || "Login failed");
   }

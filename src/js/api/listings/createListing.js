@@ -18,7 +18,6 @@ selectedDeadline = deadlineOptions.options[deadlineOptions.selectedIndex].value;
 
 deadlineOptions.addEventListener("change", function () {
   selectedDeadline = this.options[this.selectedIndex].value;
-  console.log(selectedDeadline);
 });
 
 document
@@ -39,7 +38,6 @@ export async function createListing(event) {
     var now = new Date();
     now.setHours(now.getHours() + Number(selectedDeadline));
     var realDeadline = now.toISOString();
-    console.log(realDeadline, now);
 
     const listingData = {
       title: `${titleInput}`,
@@ -70,7 +68,7 @@ export async function createListing(event) {
       body: JSON.stringify(listingData),
     });
     const json = await response.json();
-    console.log(response);
+
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Could not create listing");
     } else

@@ -5,8 +5,6 @@ export async function carouselListings() {
   try {
     const trendingItems = await fetchListings(baseURL + listingsEndpoint);
 
-    console.log(trendingItems);
-
     let carouselItems = "";
 
     // Items with the most bids, with only three items showing in carousel at a time.

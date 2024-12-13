@@ -18,5 +18,3 @@ htmlContent = htmlContent.replace(
 );
 
 fs.writeFileSync(htmlPath, htmlContent, "utf-8");
-
-console.log("Environment variables injected into HTML");

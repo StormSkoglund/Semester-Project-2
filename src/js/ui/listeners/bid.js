@@ -9,7 +9,6 @@ export async function bid(event) {
     const idEndpointBid = `auction/listings/${id}/bids`;
 
     const amountInput = parseFloat(setAmount.value);
-    console.log(amountInput);
 
     const amountData = {
       amount: amountInput,
@@ -20,7 +19,7 @@ export async function bid(event) {
       body: JSON.stringify(amountData),
     });
     const json = await response.json();
-    console.log(response);
+
     if (!response.ok) {
       throw new Error(json.errors?.[0]?.message || "Bid failed");
     } else

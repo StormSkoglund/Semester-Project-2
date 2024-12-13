@@ -48,7 +48,6 @@ async function requestReg() {
     },
     venueManager: true,
   };
-  console.log(user);
 
   // Connor O' Briens solution for allowing blank inputs in the register form.
   if (avatarValue.trim() !== "") {
@@ -84,7 +83,6 @@ async function requestReg() {
     data-bs-target="#loginModal"
   >Login</button>`;
     document.getElementById("close").innerHTML = "";
-    console.log(regData);
   } catch (error) {
     tryCatchError(error);
   }

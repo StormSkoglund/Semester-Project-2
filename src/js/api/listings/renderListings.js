@@ -7,7 +7,6 @@ import { singleListing } from "./singleListing.js";
 export async function renderListings() {
   try {
     const listings = await fetchListings(baseURL + listingsEndpoint);
-    console.log(listings);
 
     listings.data.forEach((listing) => {
       let mediaContent = listing.media[0]

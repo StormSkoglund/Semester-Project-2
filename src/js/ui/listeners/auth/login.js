@@ -25,12 +25,10 @@ async function requestLogin(event) {
     password: `${passwordLoginInput}`,
   };
 
-  console.log(loginUserData);
-
   try {
     const URL = baseURL + loginEndpoint;
     const loginUser = await login(URL, loginUserData);
-    console.log(loginUser);
+
     if (loginUser) {
       document.getElementById("displayError").innerHTML = "";
       document.getElementById(

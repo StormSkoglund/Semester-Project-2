@@ -14,7 +14,7 @@ export async function singleListing(event) {
 
     if (response.ok) {
       const displayListData = await response.json();
-      console.log(displayListData);
+
       const listingId = event.target.dataset.userId;
       let bidButton = document.getElementById("modalSubmitButton");
 
@@ -45,8 +45,6 @@ export async function singleListing(event) {
 
         document.getElementById("amountContainer").innerText =
           "The highest bid is: " + highestBid + " credits";
-      } else {
-        console.log("No bids available");
       }
 
       bids.forEach((bid) => {
