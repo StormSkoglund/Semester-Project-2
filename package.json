@@ -1,6 +1,6 @@
 {
   "name": "semester-project-2",
-  "version": "0.1.5",
+  "version": "1.0.0",
   "description": "A website for an auction house.",
   "main": "index.js",
   "scripts": {
