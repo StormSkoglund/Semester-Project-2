@@ -8,7 +8,7 @@ export async function getProfile() {
       method: "GET",
     });
     const json = await response.json();
-    console.log(response);
+
     if (!response.ok) {
       throw new Error(
         (document.getElementById.innerText =

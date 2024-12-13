@@ -5,8 +5,6 @@ export async function carouselListings() {
   try {
     const trendingItems = await fetchListings(baseURL + listingsEndpoint);
 
-    console.log(trendingItems);
-
     let carouselItems = "";
 
     // Items with the most bids, with only three items showing in carousel at a time.
@@ -27,11 +25,12 @@ export async function carouselListings() {
 
         carouselItems += `
             <div class="carousel-item ${index === 0 ? "active" : ""}">
-              <img src="${mediaContent}" class="d-block m-auto w-100 img-carousel" alt="${altText}" />
+              <img src="${mediaContent}" class="d-block m-auto img-fluid img-carousel" alt="${altText}" />
               <div class="carousel-caption d-md-block">
-                <p class="header1 col-12 text-truncate mt-3 mb-3 m-auto bg-dark rounded opacity-75">
-                  ${item.title}.
-                </p>
+                <p class="col-12 text-truncate mt-3 mb-3 m-auto bg-dark rounded opacity-75 text-small text-md-header1">
+              ${item.title}
+              </p>
+
               </div>
             </div>`;
       });

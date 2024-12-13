@@ -12,7 +12,6 @@ export async function updateProfiledata(event) {
 
   const editAvatar = document.getElementById("updateAvatar");
   const updatedAvatar = editAvatar.value;
-  console.log(updatedAvatar);
 
   const newAvatarData = {
     avatar: {
@@ -26,7 +25,7 @@ export async function updateProfiledata(event) {
   });
 
   const json = await response.json();
-  console.log(json);
+
   if (!response.ok) {
     throw new Error(json.errors?.[0]?.message || "update failed");
   } else {

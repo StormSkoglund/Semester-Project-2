@@ -6,7 +6,6 @@ export async function renderProfile() {
   try {
     const profileContent = await getProfile();
 
-    console.log(profileContent);
     document.getElementById(
       "profileContainer"
     ).innerHTML += `<p class="header2 text-center">${profileContent.data.name}</p><img class="d-block col-4 m-auto pro-avatar-img rounded-circle" src="${profileContent.data.avatar.url}" alt="${profileContent.data.avatar.alt}">`;

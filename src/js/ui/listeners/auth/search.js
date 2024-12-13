@@ -11,7 +11,6 @@ async function search(event) {
   event.preventDefault();
 
   const getSearchInputs = searchInput.value.trim().toLowerCase();
-  console.log(getSearchInputs);
 
   const searchValueEndpoint = "auction/listings/search?q=" + getSearchInputs;
 
@@ -19,7 +18,7 @@ async function search(event) {
     method: "GET",
   });
   const json = await response.json();
-  console.log(response);
+
   if (!response.ok) {
     document.getElementById("searchErrorContainer").innerText = "Search failed";
   } else if (json.data.length === 0) {

@@ -5,8 +5,6 @@ export function profile() {
   const loggedIn = load("loginStatus");
   const userProfile = load("userProfile");
 
-  console.log(loggedIn, userProfile.email);
-
   if (loggedIn === true && typeof token === "string") {
     /* document.getElementById(
       "profileContainer"

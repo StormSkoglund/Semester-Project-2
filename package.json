@@ -1,6 +1,6 @@
 {
   "name": "semester-project-2",
-  "version": "0.1.4",
+  "version": "1.0.1",
   "description": "A website for an auction house.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "build": "sass src/scss:dist/css",
     "watch": "sass src/scss:dist/css --watch",
     "start": "live-server",
-    "dev": "npm-run-all --parallel watch start"
+    "dev": "npm-run-all --parallel watch start",
+    "inject-env": "node injectEnv.js"
   },
   "repository": {
     "type": "git",

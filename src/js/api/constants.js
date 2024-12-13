@@ -24,7 +24,7 @@ export const showTryCatchError = document.querySelector(".tryCatchContainer");
 export const successContainer = document.querySelector(".successContainer");
 export const displayListings = document.querySelector(".listingsContainer");
 // Others
-export const apiKey = "3adf45c0-1ffd-48f3-9235-e2a640950e28";
+export const apiKey = window.env.API_KEY;
 export const userProfile = load("userProfile");
 export const userName = userProfile?.username;
 export const isLoggedIn = load("loginStatus");
