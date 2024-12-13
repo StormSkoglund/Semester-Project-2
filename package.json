@@ -8,8 +8,7 @@
     "build": "sass src/scss:dist/css",
     "watch": "sass src/scss:dist/css --watch",
     "start": "live-server",
-    "dev": "npm-run-all --parallel watch start",
-    "inject-env": "node injectEnv.js"
+    "dev": "npm-run-all --parallel watch start"
   },
   "repository": {
     "type": "git",
